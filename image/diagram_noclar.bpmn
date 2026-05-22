@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_AskReport" targetNamespace="http://rag-postgres/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.13.2">
+  <bpmn:collaboration id="Collaboration_AskReport" name="Обработка пользовательского запроса в PostgreSQL RAG Assistant">
+    <bpmn:participant id="Participant_Assistant" name="PostgreSQL RAG Assistant" processRef="Process_Assistant" />
+    <bpmn:textAnnotation id="TextAnnotation_0uru5in">
+      <bpmn:text>да</bpmn:text>
+    </bpmn:textAnnotation>
+  </bpmn:collaboration>
+  <bpmn:dataStore id="DataStore_pgvector" name="PostgreSQL / pgvector" />
+  <bpmn:process id="Process_Assistant" name="PostgreSQL RAG Assistant" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_Assistant">
+      <bpmn:lane id="Lane_RAG" name="RAG pipeline">
+        <bpmn:flowNodeRef>Task_RetrievalRerank</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>GW_EvidenceEnough</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_GenerateAnswer</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_GenerateTutorial</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>GW_ResponseMode</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_LimitedAnswer</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>GW_ResultMerge</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Backend" name="FastAPI и AskOrchestrationService">
+        <bpmn:flowNodeRef>Task_VersionError</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_RequestValidation</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>GW_VersionSupported</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_PrepareQuery</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_SaveResponse</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Client" name="Пользователь и Frontend">
+        <bpmn:flowNodeRef>Start_Request</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_InputAndSend</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_ShowAnswer</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>End_Success</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>End_Error</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_ShowError</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="Start_Request" />
+    <bpmn:task id="Task_VersionError" name="Сохранить ошибочный запрос" />
+    <bpmn:userTask id="Task_InputAndSend" name="Ввести и отправить запрос" />
+    <bpmn:task id="Task_RequestValidation" name="POST /api/ask: валидация запроса и версия">
+      <bpmn:outgoing>Flow_0zfkgkb</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="GW_VersionSupported" name="Версия?">
+      <bpmn:incoming>Flow_0zfkgkb</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ptx1v3</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_PrepareQuery" name="Анализ, корпуса и embedding">
+      <bpmn:incoming>Flow_1ptx1v3</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:task id="Task_RetrievalRerank" name="Retrieval и rerank">
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0u2tgyr">
+        <bpmn:targetRef>DSRef_pgvector</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:task>
+    <bpmn:dataStoreReference id="DSRef_pgvector" name="PostgreSQL / pgvector" dataStoreRef="DataStore_pgvector" />
+    <bpmn:exclusiveGateway id="GW_EvidenceEnough" name="Evidence достаточно?" />
+    <bpmn:serviceTask id="Task_GenerateAnswer" name="Groq: текстовый ответ" />
+    <bpmn:serviceTask id="Task_GenerateTutorial" name="Groq: tutorial-ответ" />
+    <bpmn:exclusiveGateway id="GW_ResponseMode" name="Режим?" />
+    <bpmn:task id="Task_LimitedAnswer" name="Ограниченный ответ" />
+    <bpmn:exclusiveGateway id="GW_ResultMerge" />
+    <bpmn:task id="Task_SaveResponse" name="Сохранить историю и AskResponse" />
+    <bpmn:task id="Task_ShowAnswer" name="Показать ответ и источники" />
+    <bpmn:endEvent id="End_Success" name="Ответ получен" />
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="Start_Request" targetRef="Task_InputAndSend" />
+    <bpmn:sequenceFlow id="Flow_4_no" name="нет" sourceRef="GW_VersionSupported" targetRef="Task_VersionError" />
+    <bpmn:sequenceFlow id="Flow_5" sourceRef="Task_VersionError" targetRef="Task_ShowError" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Task_InputAndSend" targetRef="Task_RequestValidation" />
+    <bpmn:sequenceFlow id="Flow_0zfkgkb" sourceRef="Task_RequestValidation" targetRef="GW_VersionSupported" />
+    <bpmn:sequenceFlow id="Flow_6" sourceRef="Task_ShowError" targetRef="End_Error" />
+    <bpmn:sequenceFlow id="Flow_12" sourceRef="Task_PrepareQuery" targetRef="Task_RetrievalRerank" />
+    <bpmn:sequenceFlow id="Flow_13" sourceRef="Task_RetrievalRerank" targetRef="GW_EvidenceEnough" />
+    <bpmn:sequenceFlow id="Flow_14_no" name="нет" sourceRef="GW_EvidenceEnough" targetRef="Task_LimitedAnswer" />
+    <bpmn:sequenceFlow id="Flow_16_yes" name="да" sourceRef="GW_EvidenceEnough" targetRef="GW_ResponseMode" />
+    <bpmn:sequenceFlow id="Flow_17_sd" sourceRef="GW_ResponseMode" targetRef="Task_GenerateAnswer" />
+    <bpmn:sequenceFlow id="Flow_19" sourceRef="Task_GenerateAnswer" targetRef="GW_ResultMerge" />
+    <bpmn:sequenceFlow id="Flow_18_tutorial" sourceRef="GW_ResponseMode" targetRef="Task_GenerateTutorial" />
+    <bpmn:sequenceFlow id="Flow_20" sourceRef="Task_GenerateTutorial" targetRef="GW_ResultMerge" />
+    <bpmn:sequenceFlow id="Flow_15" sourceRef="Task_LimitedAnswer" targetRef="GW_ResultMerge" />
+    <bpmn:sequenceFlow id="Flow_21" sourceRef="GW_ResultMerge" targetRef="Task_SaveResponse" />
+    <bpmn:sequenceFlow id="Flow_22" sourceRef="Task_SaveResponse" targetRef="Task_ShowAnswer" />
+    <bpmn:sequenceFlow id="Flow_23" sourceRef="Task_ShowAnswer" targetRef="End_Success" />
+    <bpmn:endEvent id="End_Error" name="Ошибка показана" />
+    <bpmn:task id="Task_ShowError" name="Показать ошибку" />
+    <bpmn:sequenceFlow id="Flow_1ptx1v3" sourceRef="GW_VersionSupported" targetRef="Task_PrepareQuery" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_AskReport" name="Обработка пользовательского запроса в PostgreSQL RAG Assistant">
+    <bpmndi:BPMNPlane id="BPMNPlane_AskReport" bpmnElement="Collaboration_AskReport">
+      <bpmndi:BPMNShape id="Participant_Assistant_di" bpmnElement="Participant_Assistant" isHorizontal="true">
+        <dc:Bounds x="160" y="40" width="1530" height="640" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_RAG_di" bpmnElement="Lane_RAG" isHorizontal="true">
+        <dc:Bounds x="190" y="440" width="1500" height="240" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Backend_di" bpmnElement="Lane_Backend" isHorizontal="true">
+        <dc:Bounds x="190" y="220" width="1500" height="220" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Client_di" bpmnElement="Lane_Client" isHorizontal="true">
+        <dc:Bounds x="190" y="70" width="1500" height="150" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Start_Request_di" bpmnElement="Start_Request">
+        <dc:Bounds x="225" y="127" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_VersionError_di" bpmnElement="Task_VersionError">
+        <dc:Bounds x="645" y="355" width="145" height="60" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_InputAndSend_di" bpmnElement="Task_InputAndSend">
+        <dc:Bounds x="300" y="115" width="160" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_RequestValidation_di" bpmnElement="Task_RequestValidation">
+        <dc:Bounds x="295" y="271" width="170" height="60" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="GW_VersionSupported_di" bpmnElement="GW_VersionSupported" isMarkerVisible="true">
+        <dc:Bounds x="547" y="278" width="45" height="45" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="548" y="263" width="44" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_PrepareQuery_di" bpmnElement="Task_PrepareQuery">
+        <dc:Bounds x="900" y="270" width="170" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_RetrievalRerank_di" bpmnElement="Task_RetrievalRerank">
+        <dc:Bounds x="900" y="475" width="170" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DSRef_pgvector_di" bpmnElement="DSRef_pgvector">
+        <dc:Bounds x="900" y="580" width="170" height="60" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="952" y="640" width="67" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="GW_EvidenceEnough_di" bpmnElement="GW_EvidenceEnough" isMarkerVisible="true">
+        <dc:Bounds x="1120" y="507" width="45" height="45" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1158" y="533" width="64" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_GenerateAnswer_di" bpmnElement="Task_GenerateAnswer">
+        <dc:Bounds x="1315" y="454" width="150" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_GenerateTutorial_di" bpmnElement="Task_GenerateTutorial">
+        <dc:Bounds x="1315" y="530" width="150" height="60" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="GW_ResponseMode_di" bpmnElement="GW_ResponseMode" isMarkerVisible="true">
+        <dc:Bounds x="1227" y="461" width="45" height="45" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1229" y="443" width="41" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_LimitedAnswer_di" bpmnElement="Task_LimitedAnswer">
+        <dc:Bounds x="1310" y="600" width="160" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="GW_ResultMerge_di" bpmnElement="GW_ResultMerge" isMarkerVisible="true">
+        <dc:Bounds x="1537" y="461" width="45" height="45" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_SaveResponse_di" bpmnElement="Task_SaveResponse">
+        <dc:Bounds x="1400" y="271" width="180" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_ShowAnswer_di" bpmnElement="Task_ShowAnswer">
+        <dc:Bounds x="1415" y="105" width="150" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_Success_di" bpmnElement="End_Success">
+        <dc:Bounds x="1622" y="117" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1603" y="153" width="75" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_Error_di" bpmnElement="End_Error">
+        <dc:Bounds x="967" y="142" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="961" y="104.5" width="48" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_ShowError_di" bpmnElement="Task_ShowError">
+        <dc:Bounds x="658" y="130" width="140" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1">
+        <di:waypoint x="261" y="145" />
+        <di:waypoint x="300" y="145" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_4_no_di" bpmnElement="Flow_4_no">
+        <di:waypoint x="570" y="323" />
+        <di:waypoint x="570" y="385" />
+        <di:waypoint x="645" y="385" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="581" y="344" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_5_di" bpmnElement="Flow_5">
+        <di:waypoint x="718" y="355" />
+        <di:waypoint x="718" y="190" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_2_di" bpmnElement="Flow_2">
+        <di:waypoint x="380" y="175" />
+        <di:waypoint x="380" y="271" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0zfkgkb_di" bpmnElement="Flow_0zfkgkb">
+        <di:waypoint x="465" y="301" />
+        <di:waypoint x="548" y="301" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_6_di" bpmnElement="Flow_6">
+        <di:waypoint x="798" y="160" />
+        <di:waypoint x="967" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_12_di" bpmnElement="Flow_12">
+        <di:waypoint x="985" y="330" />
+        <di:waypoint x="985" y="475" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13_di" bpmnElement="Flow_13">
+        <di:waypoint x="1070" y="530" />
+        <di:waypoint x="1120" y="530" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_14_no_di" bpmnElement="Flow_14_no">
+        <di:waypoint x="1143" y="552" />
+        <di:waypoint x="1143" y="630" />
+        <di:waypoint x="1310" y="630" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1150" y="582" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16_yes_di" bpmnElement="Flow_16_yes">
+        <di:waypoint x="1143" y="508" />
+        <di:waypoint x="1143" y="484" />
+        <di:waypoint x="1228" y="484" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1152" y="493" width="14" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_17_sd_di" bpmnElement="Flow_17_sd">
+        <di:waypoint x="1272" y="484" />
+        <di:waypoint x="1315" y="484" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_19_di" bpmnElement="Flow_19">
+        <di:waypoint x="1465" y="484" />
+        <di:waypoint x="1538" y="484" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18_tutorial_di" bpmnElement="Flow_18_tutorial">
+        <di:waypoint x="1250" y="506" />
+        <di:waypoint x="1250" y="560" />
+        <di:waypoint x="1315" y="560" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_20_di" bpmnElement="Flow_20">
+        <di:waypoint x="1465" y="560" />
+        <di:waypoint x="1560" y="560" />
+        <di:waypoint x="1560" y="506" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_15_di" bpmnElement="Flow_15">
+        <di:waypoint x="1470" y="630" />
+        <di:waypoint x="1620" y="630" />
+        <di:waypoint x="1620" y="484" />
+        <di:waypoint x="1582" y="484" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_21_di" bpmnElement="Flow_21">
+        <di:waypoint x="1560" y="462" />
+        <di:waypoint x="1560" y="331" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_22_di" bpmnElement="Flow_22">
+        <di:waypoint x="1560" y="271" />
+        <di:waypoint x="1560" y="164" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_23_di" bpmnElement="Flow_23">
+        <di:waypoint x="1565" y="135" />
+        <di:waypoint x="1622" y="135" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ptx1v3_di" bpmnElement="Flow_1ptx1v3">
+        <di:waypoint x="592" y="301" />
+        <di:waypoint x="900" y="300" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_0u2tgyr_di" bpmnElement="DataOutputAssociation_0u2tgyr">
+        <di:waypoint x="985" y="535" />
+        <di:waypoint x="985" y="580" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_0uru5in_di" bpmnElement="TextAnnotation_0uru5in">
+        <dc:Bounds x="610" y="270" width="100" height="30" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

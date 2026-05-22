@@ -1,0 +1,441 @@
+\begin{thebibliography}{10}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote\long\def\BibAnnote#1{}\else\fi
+\ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
+
+\bibitem{postgres-docs}
+\selectlanguageifdefined{english}
+{{The PostgreSQL Global Development Group}}. PostgreSQL Documentation. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://www.postgresql.org/docs/} (дата
+  обращения: 10.05.2026).
+
+\bibitem{postgres-docs-16}
+\selectlanguageifdefined{english}
+{{The PostgreSQL Global Development Group}}. PostgreSQL 16 Documentation. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://www.postgresql.org/docs/16/} (дата
+  обращения: 10.05.2026).
+
+\bibitem{postgres-docs-17}
+\selectlanguageifdefined{english}
+{{The PostgreSQL Global Development Group}}. PostgreSQL 17 Documentation. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://www.postgresql.org/docs/17/} (дата
+  обращения: 10.05.2026).
+
+\bibitem{postgres-docs-18}
+\selectlanguageifdefined{english}
+{{The PostgreSQL Global Development Group}}. PostgreSQL 18 Documentation. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://www.postgresql.org/docs/18/} (дата
+  обращения: 10.05.2026).
+
+\bibitem{postgres-versioning}
+\selectlanguageifdefined{english}
+{{The PostgreSQL Global Development Group}}. PostgreSQL Versioning Policy. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://www.postgresql.org/support/versioning/} (дата
+  обращения: 10.05.2026).
+
+\bibitem{postgres-release-root}
+\selectlanguageifdefined{english}
+{{The PostgreSQL Global Development Group}}. PostgreSQL Release Notes Archive.
+  --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://www.postgresql.org/docs/release/} (дата
+  обращения: 10.05.2026).
+
+\bibitem{lewis2020rag}
+\selectlanguageifdefined{english}
+Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks~/
+  Patrick~Lewis, Ethan~Perez, Aleksandra~Piktus et~al.~// Advances in Neural
+  Information Processing Systems. --
+\newblock Vol.~33. --
+\newblock 2020. --
+\newblock Pp.~9459--9474.
+
+\bibitem{dpr2020}
+\selectlanguageifdefined{english}
+Dense Passage Retrieval for Open-Domain Question Answering~/
+  Vladimir~Karpukhin, Barlas~Oguz, Sewon~Min et~al.~// Proceedings of the 2020
+  Conference on Empirical Methods in Natural Language Processing. --
+\newblock 2020. --
+\newblock Pp.~6769--6781.
+
+\bibitem{sbert2019}
+\selectlanguageifdefined{english}
+{Reimers,~Nils}. Sentence-BERT: Sentence Embeddings using Siamese
+  BERT-Networks~/ Nils~Reimers, Iryna~Gurevych~// Proceedings of the 2019
+  Conference on Empirical Methods in Natural Language Processing. --
+\newblock 2019. --
+\newblock Pp.~3982--3992.
+
+\bibitem{colbert2020}
+\selectlanguageifdefined{english}
+{Khattab,~Omar}. ColBERT: Efficient and Effective Passage Search via
+  Contextualized Late Interaction over BERT~/ Omar~Khattab, Matei~Zaharia~//
+  Proceedings of the 43rd International ACM SIGIR Conference on Research and
+  Development in Information Retrieval. --
+\newblock 2020. --
+\newblock Pp.~39--48.
+
+\bibitem{bert2018}
+\selectlanguageifdefined{english}
+BERT: Pre-training of Deep Bidirectional Transformers for Language
+  Understanding~/ Jacob~Devlin, Ming-Wei~Chang, Kenton~Lee,
+  Kristina~Toutanova~// Proceedings of NAACL-HLT 2019. --
+\newblock 2019. --
+\newblock Pp.~4171--4186.
+
+\bibitem{sommerville2016}
+\selectlanguageifdefined{english}
+{Sommerville,~Ian}. Software Engineering~/ Ian~Sommerville. --
+\newblock 10 edition. --
+\newblock Boston: Pearson, 2016.
+
+\bibitem{pressman2020}
+\selectlanguageifdefined{english}
+{Pressman,~Roger~S.} Software Engineering: A Practitioner's Approach~/
+  Roger~S.~Pressman, Bruce~R.~Maxim. --
+\newblock 9 edition. --
+\newblock New York: McGraw-Hill Education, 2020.
+
+\bibitem{gost-r-iso-25010-2015}
+\selectlanguageifdefined{english}
+{{Федеральное агентство по техническому
+  регулированию и метрологии}}. ГОСТ Р
+  ИСО/МЭК 25010-2015. Требования и оценка
+  качества систем и программного
+  обеспечения. Модели качества. --
+\newblock М.: Стандартинформ. --
+\newblock 2016.
+
+\bibitem{manning2008}
+\selectlanguageifdefined{english}
+{Manning,~Christopher~D.} Introduction to Information Retrieval~/
+  Christopher~D.~Manning, Prabhakar~Raghavan, Hinrich~Sch{\"u}tze. --
+\newblock Cambridge: Cambridge University Press, 2008.
+
+\bibitem{bm25-prf}
+\selectlanguageifdefined{english}
+{Robertson,~Stephen}. The Probabilistic Relevance Framework: BM25 and Beyond~/
+  Stephen~Robertson, Hugo~Zaragoza~// {Foundations and Trends in Information
+  Retrieval}. --
+\newblock 2009. --
+\newblock Vol.~3, no.~4. --
+\newblock Pp.~333--389.
+
+\bibitem{hnsw2016}
+\selectlanguageifdefined{english}
+{Malkov,~Yu.~A.} Efficient and robust approximate nearest neighbor search using
+  Hierarchical Navigable Small World graphs~/ Yu.~A.~Malkov, D.~A.~Yashunin~//
+  {IEEE Transactions on Pattern Analysis and Machine Intelligence}. --
+\newblock 2020. --
+\newblock Vol.~42, no.~4. --
+\newblock Pp.~824--836.
+
+\bibitem{faiss2017}
+\selectlanguageifdefined{english}
+{Johnson,~Jeff}. Billion-scale similarity search with GPUs~/ Jeff~Johnson,
+  Matthijs~Douze, Herv{\'e}~J{\'e}gou~// {IEEE Transactions on Big Data}. --
+\newblock 2021. --
+\newblock Vol.~7, no.~3. --
+\newblock Pp.~535--547.
+
+\bibitem{codd1970}
+\selectlanguageifdefined{english}
+{Codd,~E.~F.} A Relational Model of Data for Large Shared Data Banks~/
+  E.~F.~Codd~// {Communications of the ACM}. --
+\newblock 1970. --
+\newblock Vol.~13, no.~6. --
+\newblock Pp.~377--387.
+
+\bibitem{ullman1988}
+\selectlanguageifdefined{english}
+{Ullman,~Jeffrey~D.} Principles of Database and Knowledge-Base Systems~/
+  Jeffrey~D.~Ullman. --
+\newblock Rockville: Computer Science Press, 1988.
+
+\bibitem{date2004}
+\selectlanguageifdefined{english}
+{Date,~C.~J.} An Introduction to Database Systems~/ C.~J.~Date. --
+\newblock 8 edition. --
+\newblock Boston: Pearson, 2004.
+
+\bibitem{garcia2008}
+\selectlanguageifdefined{english}
+{Garcia-Molina,~Hector}. Database Systems: The Complete Book~/
+  Hector~Garcia-Molina, Jeffrey~D.~Ullman, Jennifer~Widom. --
+\newblock 2 edition. --
+\newblock Upper Saddle River: Pearson, 2008.
+
+\bibitem{silberschatz2020}
+\selectlanguageifdefined{english}
+{Silberschatz,~Abraham}. Database System Concepts~/ Abraham~Silberschatz,
+  Henry~F.~Korth, S.~Sudarshan. --
+\newblock 7 edition. --
+\newblock New York: McGraw-Hill Education, 2020.
+
+\bibitem{elmasri2016}
+\selectlanguageifdefined{english}
+{Elmasri,~Ramez}. Fundamentals of Database Systems~/ Ramez~Elmasri,
+  Shamkant~B.~Navathe. --
+\newblock 7 edition. --
+\newblock Boston: Pearson, 2016.
+
+\bibitem{martin2017}
+\selectlanguageifdefined{english}
+{Martin,~Robert~C.} Clean Architecture: A Craftsman's Guide to Software
+  Structure and Design~/ Robert~C.~Martin. --
+\newblock Boston: Prentice Hall, 2017.
+
+\bibitem{fowler2002}
+\selectlanguageifdefined{english}
+{Fowler,~Martin}. Patterns of Enterprise Application Architecture~/
+  Martin~Fowler. --
+\newblock Boston: Addison-Wesley, 2002.
+
+\bibitem{fowler2018}
+\selectlanguageifdefined{english}
+{Fowler,~Martin}. Refactoring: Improving the Design of Existing Code~/
+  Martin~Fowler. --
+\newblock 2 edition. --
+\newblock Boston: Addison-Wesley, 2018.
+
+\bibitem{bass2021}
+\selectlanguageifdefined{english}
+{Bass,~Len}. Software Architecture in Practice~/ Len~Bass, Paul~Clements,
+  Rick~Kazman. --
+\newblock 4 edition. --
+\newblock Boston: Addison-Wesley, 2021.
+
+\bibitem{larman2004}
+\selectlanguageifdefined{english}
+{Larman,~Craig}. Applying UML and Patterns~/ Craig~Larman. --
+\newblock 3 edition. --
+\newblock Upper Saddle River: Prentice Hall, 2004.
+
+\bibitem{newman2021}
+\selectlanguageifdefined{english}
+{Newman,~Sam}. Building Microservices~/ Sam~Newman. --
+\newblock 2 edition. --
+\newblock Sebastopol: O'Reilly Media, 2021.
+
+\bibitem{richards2020}
+\selectlanguageifdefined{english}
+{Richards,~Mark}. Fundamentals of Software Architecture~/ Mark~Richards,
+  Neal~Ford. --
+\newblock Sebastopol: O'Reilly Media, 2020.
+
+\bibitem{beizer1990}
+\selectlanguageifdefined{english}
+{Beizer,~Boris}. Software Testing Techniques~/ Boris~Beizer. --
+\newblock 2 edition. --
+\newblock New York: Van Nostrand Reinhold, 1990.
+
+\bibitem{myers2011}
+\selectlanguageifdefined{english}
+{Myers,~Glenford~J.} The Art of Software Testing~/ Glenford~J.~Myers,
+  Corey~Sandler, Tom~Badgett. --
+\newblock 3 edition. --
+\newblock Hoboken: John Wiley and Sons, 2011.
+
+\bibitem{kaner1999}
+\selectlanguageifdefined{english}
+{Kaner,~Cem}. Testing Computer Software~/ Cem~Kaner, Jack~Falk, Hung~Q.~Nguyen.
+  --
+\newblock 2 edition. --
+\newblock New York: John Wiley and Sons, 1999.
+
+\bibitem{docker-docs}
+\selectlanguageifdefined{english}
+{{Docker, Inc.}} Docker Documentation. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://docs.docker.com/} (дата обращения:
+  10.05.2026).
+
+\bibitem{postgres-logical-replication-16}
+\selectlanguageifdefined{english}
+{{The PostgreSQL Global Development Group}}. PostgreSQL 16: Logical
+  Replication. --
+\newblock [Электронный ресурс]. --
+\newblock URL:
+  \url{https://www.postgresql.org/docs/16/logical-replication.html} (дата
+  обращения: 10.05.2026).
+
+\bibitem{postgres-runtime-config-repl-16}
+\selectlanguageifdefined{english}
+{{The PostgreSQL Global Development Group}}. PostgreSQL 16: Runtime
+  Configuration -- Replication. --
+\newblock [Электронный ресурс]. --
+\newblock URL:
+  \url{https://www.postgresql.org/docs/16/runtime-config-replication.html}
+  (дата обращения: 10.05.2026).
+
+\bibitem{fastapi-docs}
+\selectlanguageifdefined{english}
+{Ram{\'i}rez,~Sebasti{\'a}n}. FastAPI Documentation. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://fastapi.tiangolo.com/} (дата
+  обращения: 10.05.2026).
+
+\bibitem{pydantic-docs}
+\selectlanguageifdefined{english}
+{{Pydantic Team}}. Pydantic Documentation. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://pydantic.dev/docs/} (дата обращения:
+  10.05.2026).
+
+\bibitem{sqlalchemy-docs}
+\selectlanguageifdefined{english}
+{{SQLAlchemy Authors}}. SQLAlchemy Documentation. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://docs.sqlalchemy.org/20/} (дата
+  обращения: 10.05.2026).
+
+\bibitem{alembic-docs}
+\selectlanguageifdefined{english}
+{{Alembic Authors}}. Alembic Documentation. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://alembic.sqlalchemy.org/} (дата
+  обращения: 10.05.2026).
+
+\bibitem{pgvector}
+\selectlanguageifdefined{english}
+{Kane,~Andrew}. pgvector: Open-source vector similarity search for PostgreSQL.
+  --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://github.com/pgvector/pgvector} (дата
+  обращения: 10.05.2026).
+
+\bibitem{beautifulsoup-docs}
+\selectlanguageifdefined{english}
+{Richardson,~Leonard}. Beautiful Soup Documentation. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://www.crummy.com/software/BeautifulSoup/bs4/doc/}
+  (дата обращения: 10.05.2026).
+
+\bibitem{httpx-docs}
+\selectlanguageifdefined{english}
+{{Encode OSS Ltd.}} HTTPX Documentation. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://www.python-httpx.org/} (дата
+  обращения: 10.05.2026).
+
+\bibitem{groq-docs}
+\selectlanguageifdefined{english}
+{{Groq, Inc.}} Groq API Documentation. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://console.groq.com/docs/overview} (дата
+  обращения: 10.05.2026).
+
+\bibitem{pytest-docs}
+\selectlanguageifdefined{english}
+{{pytest development team}}. pytest Documentation. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://docs.pytest.org/} (дата обращения:
+  10.05.2026).
+
+\bibitem{postgres-textsearch-16}
+\selectlanguageifdefined{english}
+{{The PostgreSQL Global Development Group}}. PostgreSQL 16: Full Text Search.
+  --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://www.postgresql.org/docs/16/textsearch.html}
+  (дата обращения: 10.05.2026).
+
+\bibitem{gost-7-32-2017}
+\selectlanguageifdefined{english}
+{{Межгосударственный совет по
+  стандартизации, метрологии и
+  сертификации}}. ГОСТ 7.32-2017. СИБИД. Отчет о
+  научно-исследовательской работе.
+  Структура и правила оформления. --
+\newblock М.: Стандартинформ. --
+\newblock 2018.
+
+\bibitem{gost-r-7-0-100-2018}
+\selectlanguageifdefined{english}
+{{Федеральное агентство по техническому
+  регулированию и метрологии}}. ГОСТ Р
+  7.0.100-2018. СИБИД. Библиографическая запись.
+  Библиографическое описание. Общие
+  требования и правила составления. --
+\newblock М.: Стандартинформ. --
+\newblock 2018.
+
+\bibitem{gost-r-7-0-5-2008}
+\selectlanguageifdefined{english}
+{{Федеральное агентство по техническому
+  регулированию и метрологии}}. ГОСТ Р 7.0.5-2008.
+  СИБИД. Библиографическая ссылка. Общие
+  требования и правила составления. --
+\newblock М.: Стандартинформ. --
+\newblock 2008.
+
+\bibitem{gost-19-201-78}
+\selectlanguageifdefined{english}
+{{Госстандарт СССР}}. ГОСТ 19.201-78. ЕСПД.
+  Техническое задание. Требования к
+  содержанию и оформлению. --
+\newblock М.: Издательство стандартов. --
+\newblock 1978.
+
+\bibitem{gost-34-601-90}
+\selectlanguageifdefined{english}
+{{Госстандарт СССР}}. ГОСТ 34.601-90.
+  Информационная технология.
+  Автоматизированные системы. Стадии
+  создания. --
+\newblock М.: Издательство стандартов. --
+\newblock 1990.
+
+\bibitem{gost-34-602-89}
+\selectlanguageifdefined{english}
+{{Госстандарт СССР}}. ГОСТ 34.602-89.
+  Информационная технология. Техническое
+  задание на создание автоматизированной
+  системы. --
+\newblock М.: Издательство стандартов. --
+\newblock 1989.
+
+\bibitem{kleppmann2017}
+\selectlanguageifdefined{english}
+{Kleppmann,~Martin}. Designing Data-Intensive Applications~/ Martin~Kleppmann.
+  --
+\newblock Sebastopol: O'Reilly Media, 2017.
+
+\bibitem{postgres-json-types-current}
+\selectlanguageifdefined{english}
+{{The PostgreSQL Global Development Group}}. PostgreSQL: JSON Types. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://www.postgresql.org/docs/current/datatype-json.html}
+  (дата обращения: 10.05.2026).
+
+\bibitem{postgres-uuid-type-current}
+\selectlanguageifdefined{english}
+{{The PostgreSQL Global Development Group}}. PostgreSQL: UUID Type. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://www.postgresql.org/docs/current/datatype-uuid.html}
+  (дата обращения: 10.05.2026).
+
+\bibitem{python-docs}
+\selectlanguageifdefined{english}
+{{Python Software Foundation}}. Python 3 Documentation. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://docs.python.org/3/} (дата обращения:
+  10.05.2026).
+
+\bibitem{sentence-transformers-docs}
+\selectlanguageifdefined{english}
+{{UKP Lab}}. Sentence Transformers Documentation. --
+\newblock [Электронный ресурс]. --
+\newblock URL: \url{https://www.sbert.net/} (дата обращения:
+  10.05.2026).
+
+\end{thebibliography}

@@ -1,0 +1,208 @@
+\chapter{{\fontsize{14pt}{21pt}\selectfont\MakeUppercase{Реализация веб-приложения}}}
+\label{cha:impl}
+
+\section{Выбор технологического стека}
+
+Практическая часть реализована на Python 3.12. Серверная часть построена на FastAPI, схемы входных и выходных данных описаны Pydantic, доступ к базе данных выполнен через SQLAlchemy, миграции управляются Alembic~\cite{python-docs,fastapi-docs,pydantic-docs,sqlalchemy-docs,alembic-docs}. В качестве базы данных используется PostgreSQL с расширением pgvector, что позволяет хранить обычные сущности приложения и векторные представления фрагментов в одной СУБД~\cite{postgres-docs,pgvector}.
+
+Для подготовки корпуса используется Beautiful Soup и локальные файлы HTML/Markdown~\cite{beautifulsoup-docs}. Для HTTP-взаимодействия с Groq API используется httpx~\cite{httpx-docs,groq-docs}. Векторные представления в рабочем режиме формируются локальной моделью \texttt{BAAI/bge-m3} через библиотеку sentence-transformers; тестовый хеширующий модуль разрешен только при \texttt{APP\_ENV=test}~\cite{sentence-transformers-docs}. Автоматические проверки реализованы на pytest~\cite{pytest-docs}. Локальное развертывание описано через Docker Compose.
+
+Выбор стека соответствует задачам ВКР: FastAPI обеспечивает маршруты API и HTML-страницы, PostgreSQL хранит корпус и историю, pgvector обеспечивает векторный поиск, Alembic фиксирует физическую схему, а pytest позволяет повторяемо проверить критичные правила.
+
+\section{Структура программного проекта}
+
+Структура программной части разделена по слоям. Сокращенное представление приведено в таблице~\ref{tab:impl-structure}. В таблицу включены только основные зоны ответственности, поскольку подробное перечисление внутренних файлов не несет самостоятельной инженерной ценности для отчета.
+
+\begin{center}
+\small
+\singlespacing
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{|P{0.30\textwidth}|P{0.58\textwidth}|}
+\caption{Структура программного проекта}\label{tab:impl-structure}\\
+\hline
+\textbf{Путь} & \textbf{Назначение} \\ \hline
+\endfirsthead
+\multicolumn{2}{l}{Продолжение таблицы \thetable}\\
+\hline
+\textbf{Путь} & \textbf{Назначение} \\ \hline
+\endhead
+\endfoot
+\texttt{app/main.py} & Создание FastAPI-приложения, подключение маршрутов, статических файлов, шаблонов и начального заполнения версий. \\ \hline
+\texttt{app/api/routes} & Маршруты пользовательского запроса, версий, истории, диагностики и административной переиндексации. \\ \hline
+\texttt{app/schemas} & Pydantic-схемы запросов, ответов, истории, версий, диагностики и административных операций. \\ \hline
+\texttt{app/db} & ORM-модели, перечисления и создание сессии базы данных. \\ \hline
+\texttt{app/repositories} & SQL-запросы для поиска фрагментов, индексации, истории и версий. \\ \hline
+\texttt{app/services} & Обработка пользовательского запроса, анализ вопроса, поиск фрагментов, повторное ранжирование, история и администрирование. \\ \hline
+\makecell[l]{\texttt{app/services/}\\\texttt{ingestion}} & Загрузка, очистка, разбиение и индексация официального и дополнительного корпусов. \\ \hline
+\makecell[l]{\texttt{app/services/}\\\texttt{adapters}} & Адаптеры векторных представлений и генерации через Groq API. \\ \hline
+\texttt{app/web} & Шаблоны HTML, стили и JavaScript пользовательского интерфейса. \\ \hline
+\texttt{tests} & Автоматические модульные, API, сценарные и интеграционные тесты. \\ \hline
+\end{longtable}
+\end{center}
+
+\section{Реализация модели базы данных}
+
+Модель базы данных реализована в \texttt{app/db/models.py}. В ней определены таблицы \texttt{versions}, \texttt{documents}, \texttt{chunks}, \texttt{embeddings}, \texttt{query\_history} и \texttt{query\_sources}. Набор допустимых технических значений вынесен в перечисления: \texttt{official}, \texttt{supplementary}, \texttt{short}, \texttt{detailed}, \texttt{tutorial}, \texttt{success}, \texttt{failed}.
+
+Ключевой фрагмент ORM-моделей приведен в листинге~\ref{listing:impl-db-models}. Листинг показывает только поля, которые доказывают наличие версионной привязки, фрагментов, векторов и истории.
+
+\captionsetup{type=listing}
+\captionof{listing}{Фрагмент ORM-моделей базы данных}
+\label{listing:impl-db-models}
+\begin{minted}{python}
+class Version(Base):
+    __tablename__ = "versions"
+    id = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    major_version = mapped_column(String(10), unique=True, nullable=False)
+    docs_base_url = mapped_column(String(255), nullable=False)
+    is_supported = mapped_column(Boolean, nullable=False, default=True)
+
+class Document(Base):
+    __tablename__ = "documents"
+    version_id = mapped_column(UUID(as_uuid=True), ForeignKey("versions.id", ondelete="CASCADE"), nullable=False)
+    title = mapped_column(String(500), nullable=False)
+    source_url = mapped_column(String(700), nullable=False)
+    corpus_type = mapped_column(String(30), nullable=False)
+
+class Chunk(Base):
+    __tablename__ = "chunks"
+    document_id = mapped_column(UUID(as_uuid=True), ForeignKey("documents.id", ondelete="CASCADE"), nullable=False)
+    section_path = mapped_column(String(700), nullable=False)
+    chunk_text = mapped_column(Text, nullable=False)
+    pedagogical_role = mapped_column(String(30), nullable=False, default="overview")
+
+class Embedding(Base):
+    __tablename__ = "embeddings"
+    chunk_id = mapped_column(UUID(as_uuid=True), ForeignKey("chunks.id", ondelete="CASCADE"), nullable=False, unique=True)
+    embedding_model = mapped_column(String(120), nullable=False)
+    embedding_dimension = mapped_column(Integer, nullable=False)
+    embedding = mapped_column(Vector(settings.embedding_dimension), nullable=False)
+\end{minted}
+
+История запросов хранится отдельно от корпуса. Таблица \texttt{query\_history} содержит исходный вопрос, выбранную версию, режим, текстовый ответ, JSON-структуру обучающего результата, статус и задержку. Таблица \texttt{query\_sources} сохраняет использованные источники: позицию, оценку, роль, заголовок, URL, путь раздела и тип корпуса.
+
+\section{Реализация миграций и физической схемы PostgreSQL}
+
+Физическая схема создается миграциями Alembic. Начальная миграция создает расширение \texttt{vector}, таблицы корпуса и истории, ограничения допустимых значений, индексы и векторный индекс \texttt{ivfflat}. Миграция от 4 мая 2026 года переводит векторное поле на \texttt{vector(1024)} для модели \texttt{BAAI/bge-m3}. Миграции от 5 и 7 мая 2026 года фиксируют актуальную схему режима истории: технические значения \texttt{short}, \texttt{detailed}, \texttt{tutorial} и отсутствие устаревшего поля \texttt{extended\_mode}.
+
+Ключевые строки миграции показаны в листинге~\ref{listing:impl-alembic}. Они подтверждают использование PostgreSQL, pgvector, JSONB и индекса для векторного поиска.
+
+\captionsetup{type=listing}
+\captionof{listing}{Ключевые элементы миграции PostgreSQL}
+\label{listing:impl-alembic}
+\begin{minted}{python}
+embedding_dim = int(os.getenv("EMBEDDING_DIMENSION", "1024"))
+op.execute("CREATE EXTENSION IF NOT EXISTS vector")
+
+op.create_table(
+    "embeddings",
+    sa.Column("chunk_id", postgresql.UUID(as_uuid=True), nullable=False, unique=True),
+    sa.Column("embedding_model", sa.String(length=120), nullable=False),
+    sa.Column("embedding_dimension", sa.Integer(), nullable=False),
+    sa.Column("embedding", Vector(embedding_dim), nullable=False),
+)
+
+op.create_table(
+    "query_history",
+    sa.Column("mode", sa.String(length=30), nullable=False),
+    sa.Column("tutorial_json", postgresql.JSONB(astext_type=sa.Text()), nullable=True),
+)
+
+op.execute(
+    "CREATE INDEX IF NOT EXISTS ix_embeddings_embedding ON embeddings "
+    "USING ivfflat (embedding vector_cosine_ops) WITH (lists = 100)"
+)
+\end{minted}
+
+В Docker Compose используется образ \texttt{pgvector/pgvector:pg16}. Это означает, что контейнерная среда БД основана на PostgreSQL 16 с установленным расширением pgvector. Поддерживаемые версии PostgreSQL 16, 17 и 18 относятся к версиям документации, по которым строится корпус, а не к версии серверного контейнера базы данных.
+
+\section{Реализация маршрутов программного интерфейса}
+
+Маршруты API подключаются через общий маршрутизатор с префиксом \texttt{/api}. Реальная реализация содержит маршруты \texttt{/api/ask}, \texttt{/api/versions}, \texttt{/api/history}, \texttt{/api/health}, \texttt{/api/health/embeddings} и \texttt{/api/admin/reindex}. Дополнительно в \texttt{app/main.py} реализованы HTML-страницы \texttt{/} и \texttt{/history}, а также диагностические маршруты \texttt{/health} и \texttt{/health/embeddings} без префикса \texttt{/api}.
+
+Контракт запроса \texttt{/api/ask} задается схемой \texttt{AskRequest}. Фрагмент схемы приведен в листинге~\ref{listing:impl-ask-schema}. Он показывает реальные режимы ответа и обязательную валидацию версии.
+
+\captionsetup{type=listing}
+\captionof{listing}{Фрагмент схемы пользовательского запроса}
+\label{listing:impl-ask-schema}
+\begin{minted}{python}
+class AskRequest(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    question: str = Field(min_length=3, max_length=4000)
+    pg_version: str = Field(min_length=1, max_length=10)
+    answer_mode: Literal["short", "detailed", "tutorial"]
+
+    @field_validator("pg_version")
+    @classmethod
+    def validate_version(cls, value: str) -> str:
+        normalized = value.strip()
+        if not normalized.isdigit():
+            raise ValueError("pg_version must be a major numeric version, e.g. '16'")
+        if normalized not in settings.supported_versions:
+            raise ValueError("pg_version must be one of supported versions")
+        return normalized
+\end{minted}
+
+Схема ответа \texttt{AskResponse} содержит поля \texttt{answer}, \texttt{tutorial} и \texttt{sources}. Для текстовых режимов используется поле \texttt{answer}, для обучающего режима -- структура \texttt{tutorial}.
+
+\section{Реализация подготовки и индексации корпуса}
+
+Официальный корпус загружается из локальной папки \texttt{corpus/postgres/html/<version>}. Загрузчик выбирает файлы \texttt{.html} и \texttt{.htm}, строит канонический \texttt{source\_url} на основе \texttt{OFFICIAL\_DOCS\_BASE\_URL} и выбранной версии, а при ограничении \texttt{max\_pages} применяет приоритет для страниц логической репликации, конфигурации, SQL-команд и примечаний к выпускам.
+
+Парсер очищает HTML от навигации, служебных блоков, форм и сценариев, затем извлекает заголовки, абзацы, списки, таблицы и блоки кода. Разбиение выполняется классом \texttt{TextChunker}: фрагменты ограничиваются \texttt{CHUNK\_SIZE=1200}, используют \texttt{CHUNK\_OVERLAP=200}, не смешивают разные \texttt{section\_path} и \texttt{content\_type}, а также получают педагогическую роль.
+
+Дополнительный корпус загружается из \texttt{corpus/tutorial}. Индексируются markdown-файлы \texttt{curated/<version>} и обработанные markdown-файлы \texttt{processed\_html} с признаком \texttt{indexable}. Служебные отчеты, манифесты, резервные копии, скрипты и файлы кэша не индексируются. Для curated-документов проверяется метаданное поле \texttt{pg\_version}; документ с другой версией пропускается.
+
+Индексация выполняется классом \texttt{IndexingPipeline}. Он получает или создает запись версии, подготавливает документы, вычисляет векторные представления пакетами, удаляет старый корпус выбранного типа и сохраняет новые документы, фрагменты и векторы. В рабочем режиме используется \texttt{EMBEDDING\_PROVIDER=local}, \texttt{EMBEDDING\_MODEL=BAAI/bge-m3}, \texttt{EMBEDDING\_DIMENSION=1024}, \texttt{EMBEDDING\_MAX\_SEQ\_LENGTH=8192}.
+
+\section{Реализация обработки пользовательского запроса}
+
+Обработка запроса реализована в \texttt{AskOrchestrationService}. Сервис получает объект \texttt{AskRequest}, проверяет существование версии, анализирует вопрос, выбирает корпуса, получает векторное представление вопроса, запускает поиск фрагментов, повторное ранжирование, проверку подтверждений и генерацию. После обработки сервис сохраняет историю запроса и использованные источники.
+
+Анализ вопроса реализован в \texttt{app/services/query\_processing.py}. Он нормализует текст, определяет намерение \texttt{factual}, \texttt{procedural}, \texttt{comparative}, \texttt{compatibility}, выделяет технические термины и формирует расширенные термины для лексического поиска. Для темы логической репликации автоматически добавляются термины \texttt{logical replication}, \texttt{publication}, \texttt{subscription}, \texttt{replication slot}, \texttt{wal\_level}, \texttt{max\_replication\_slots}, \texttt{max\_wal\_senders}.
+
+Выбор корпусов зафиксирован статическим методом \texttt{resolve\_corpora}. Для краткого (\texttt{short}) и подробного (\texttt{detailed}) режимов возвращается только официальный корпус (\texttt{official}); для обучающего режима (\texttt{tutorial}) возвращаются официальный и дополнительный корпуса (\texttt{official}, \texttt{supplementary}). Если обучающий поиск не вернул дополнительных кандидатов, сервис отдельно пытается получить их из дополнительного корпуса, но только после основного поиска официального корпуса.
+
+\section{Реализация поиска и учета версии}
+
+Поиск фрагментов реализован в \texttt{RetrievalRepository} и \texttt{RetrievalService}. Репозиторий извлекает кандидаты двумя ветками: векторной и лексической. Обе ветки фильтруют документы по \texttt{Version.major\_version} и списку допустимых типов корпуса. Векторная ветка сортирует результаты по \texttt{cosine\_distance}; лексическая ветка учитывает совпадения в \texttt{title}, \texttt{section\_path} и \texttt{chunk\_text}.
+
+После объединения кандидатов применяется предварительная оценка, показанная в листинге~\ref{listing:impl-prerank}. Она используется только для сортировки кандидатов перед повторным ранжированием.
+
+\captionsetup{type=listing}
+\captionof{listing}{Формула предварительного ранжирования кандидатов}
+\label{listing:impl-prerank}
+\begin{minted}{python}
+semantic_similarity = max(0.0, 1.0 - (item.distance / 2.0))
+lexical_signal = min(item.lexical_score / 8.0, 1.0)
+pre_rank = 0.74 * semantic_similarity + 0.26 * lexical_signal
+\end{minted}
+
+Контроль версии реализован методом \texttt{\_enforce\_version\_guard} класса \texttt{RetrievalService}. Сервис удаляет официальный источник, если в его URL нет ожидаемого фрагмента \texttt{/docs/<pg\_version>/}. Тем самым SQL-фильтр по версии дополняется явной проверкой адреса официальной документации.
+
+\section{Реализация повторного ранжирования и проверки подтверждений}
+
+Повторное ранжирование реализовано в \texttt{RerankingService}. Для каждого кандидата вычисляется итоговая оценка на основе семантического сходства, лексического пересечения, совпадения с заголовком и путем раздела, совпадения технических терминов, лексического сигнала, типа корпуса и педагогической роли. Для логической репликации, вопросов совместимости и параметров конфигурации применяются дополнительные бонусы и штрафы.
+
+В кратком (\texttt{short}) и подробном (\texttt{detailed}) режимах итоговый список строится только из официальных фрагментов. В обучающем режиме (\texttt{tutorial}) дополнительный корпус может быть добавлен к официальным источникам, но не заменяет их. Практическая реализация ограничивает число фрагментов одного документа, чтобы контекст не состоял из повторов одной страницы.
+
+Проверка достаточности подтверждений реализована методом \texttt{\_has\_sufficient\_evidence}. Она требует наличия официальных источников и проверяет пороги итоговой оценки, семантического сходства, лексического пересечения, совпадения заголовка и технических терминов. Для вопросов по логической репликации дополнительно проверяются тематические якоря. Если проверка не пройдена, генерация уверенного ответа блокируется, а пользователь получает безопасную формулировку о недостатке подтвержденных данных.
+
+\section{Реализация пользовательского интерфейса}
+
+Пользовательский интерфейс создан шаблонами \texttt{app/web/templates/index.html} и \texttt{app/web/templates/history.html}, стилями \texttt{app/web/static/style.css} и сценариями \texttt{app/web/static/app.js}, \texttt{app/web/static/history.js}. Главная страница содержит поле вопроса, быстрые примеры, выбор версии PostgreSQL, сегмент выбора режима ответа, блок результата, блок источников и список недавних запросов.
+
+Структура главной страницы подчинена основному сценарию: пользователь формулирует вопрос, выбирает версию PostgreSQL и режим ответа, после чего получает результат в той же рабочей области. Интерфейс не содержит отдельного переключателя корпуса. Это согласуется с серверной логикой: состав корпуса определяется режимом ответа, а не произвольным выбором пользователя. Такой вариант снижает риск ошибки, когда пользователь случайно включает дополнительный корпус для краткого ответа и получает менее проверяемый результат.
+
+JavaScript главной страницы загружает список версий через \texttt{/api/versions}, формирует структуру запроса для \texttt{/api/ask}, обрабатывает ответы трех режимов и отображает источники. Для краткого и подробного режимов используется текстовый блок ответа. Для обучающего режима отображаются отдельные секции: краткое объяснение, предварительные условия, пошаговые действия, замечания и частые ошибки. Пустые секции скрываются, поэтому пользователь не видит технических заготовок, если сервер вернул неполную обучающую структуру.
+
+Блок загрузки показывает смену этапов обработки: поиск источников, формирование ответа и проверку формулировки. Это не добавляет новых функций, но делает длительный запрос понятнее для пользователя. При ошибке интерфейс выводит нейтральное сообщение и сохраняет технические детали в раскрываемом блоке. Такой прием отделяет пользовательское объяснение от диагностической информации: обычный пользователь видит причину сбоя в краткой форме, а разработчик может скопировать детали для отладки.
+
+Источники отображаются отдельными карточками. Для каждого источника показываются название, путь раздела, тип корпуса, версия, ссылка и метаданные релевантности. Если источников много, интерфейс сначала показывает ограниченное число карточек и дает возможность раскрыть остальные. Это важно для читаемости: ответ остается в фокусе, но трассировка до документов не скрывается.
+
+Страница истории обращается к \texttt{/api/history?limit=100} и показывает вопрос, дату, версию, режим, статус, краткий предварительный просмотр ответа и раскрываемый список источников. На главной странице боковая панель истории запрашивает только четыре последних запроса через \texttt{/api/history?limit=4}. Поэтому пользователь может быстро вернуться к недавнему вопросу, а полный просмотр истории вынесен на отдельную страницу.
+
+\section{Вывод по главе}
+
+В третьей главе описана реализация веб-приложения: выбранный стек, структура проекта, ORM-модели, миграции PostgreSQL, маршруты программного интерфейса, подготовка и индексация корпуса, обработка пользовательского запроса, поиск фрагментов с учетом версии, повторное ранжирование, проверка достаточности подтверждений и пользовательский интерфейс. Раздел тестирования вынесен в отдельную четвертую главу, поэтому вывод по главе относится только к программной части.
