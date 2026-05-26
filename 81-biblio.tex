@@ -1,14 +1,156 @@
-% % Список литературы при помощи BibTeX
-% Юзать так:
-%
-% pdflatex rpz
-% bibtex rpz
-% pdflatex rpz
+\phantomsection
+\addcontentsline{toc}{chapter}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
+\chapter*{{\fontsize{14pt}{21pt}\selectfont\MakeUppercase{Список использованных источников}}}
 
+\begingroup
+\sloppy
+\normalfont\fontsize{14pt}{21pt}\selectfont
+\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{0pt}
+\justifying
+\makeatletter
+\newcommand{\BibPlainUrl}[1]{%
+  {\normalfont\fontsize{14pt}{21pt}\selectfont
+   \begingroup
+   \def\UrlBreaks{\do\.\do\@\do\\\do\/\do\!\do\_\do\|\do\>\do\]\do\)\do\,\do\?\do\&\do'\do+\do\=\do\#}%
+   \def\UrlBigBreaks{\do@url@hyp}%
+   \Urlmuskip=0mu
+   \url{#1}%
+   \endgroup}%
+}
+\makeatother
+\newcounter{manualbibitem}
+\begin{list}{\arabic{manualbibitem}.}{%
+  \usecounter{manualbibitem}%
+  \setlength{\leftmargin}{0pt}%
+  \setlength{\labelwidth}{0pt}%
+  \setlength{\labelsep}{0pt}%
+  \setlength{\itemindent}{1.25cm}%
+  \def\makelabel#1{#1\hspace{0.2cm}}%
+  \setlength{\topsep}{0pt}%
+  \setlength{\partopsep}{0pt}%
+  \setlength{\itemsep}{0pt}%
+  \setlength{\parsep}{0pt}%
+}
 
+\item PostgreSQL Documentation : сайт / The PostgreSQL Global Development Group. – URL: \BibPlainUrl{https://www.postgresql.org/docs/} (дата обращения: 10.05.2026). – Текст : электронный.
 
-\bibliographystyle{gost780u}
-\bibliography{rpz}
+\item PostgreSQL 16 Documentation : сайт / The PostgreSQL Global Development Group. – URL: \BibPlainUrl{https://www.postgresql.org/docs/16/} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item PostgreSQL 17 Documentation : сайт / The PostgreSQL Global Development Group. – URL: \BibPlainUrl{https://www.postgresql.org/docs/17/} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item PostgreSQL 18 Documentation : сайт / The PostgreSQL Global Development Group. – URL: \BibPlainUrl{https://www.postgresql.org/docs/18/} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item PostgreSQL Versioning Policy : сайт / The PostgreSQL Global Development Group. – URL: \BibPlainUrl{https://www.postgresql.org/support/versioning/} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item PostgreSQL Release Notes Archive : сайт / The PostgreSQL Global Development Group. – URL: \BibPlainUrl{https://www.postgresql.org/docs/release/} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks / P. Lewis, E. Perez, A. Piktus [et al.] // Advances in Neural Information Processing Systems. – 2020. – Т. 33. – С. 9459–9474. – Текст : непосредственный.
+
+\item Dense Passage Retrieval for Open-Domain Question Answering / V. Karpukhin, B. Oguz, S. Min [et al.] // Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing. – 2020. – С. 6769–6781. – Текст : непосредственный.
+
+\item Reimers, N. Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks / N. Reimers, I. Gurevych // Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing. – 2019. – С. 3982–3992. – Текст : непосредственный.
+
+\item Khattab, O. ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT / O. Khattab, M. Zaharia // Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval. – 2020. – С. 39–48. – Текст : непосредственный.
+
+\item BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding / J. Devlin, M.-W. Chang, K. Lee, K. Toutanova // Proceedings of NAACL-HLT 2019. – 2019. – С. 4171–4186. – Текст : непосредственный.
+
+\item Sommerville, I. Software Engineering / I. Sommerville. – 10-е изд. – Boston : Pearson, 2016. – Текст : непосредственный.
+
+\item Pressman, R. S. Software Engineering: A Practitioner's Approach / R. S. Pressman, B. R. Maxim. – 9-е изд. – New York : McGraw-Hill Education, 2020. – Текст : непосредственный.
+
+\item ГОСТ Р ИСО/МЭК 25010-2015. Требования и оценка качества систем и программного обеспечения. Модели качества : национальный стандарт Российской Федерации. – Москва : Стандартинформ, 2016. – Текст : непосредственный.
+
+\item Manning, C. D. Introduction to Information Retrieval / C. D. Manning, P. Raghavan, H. Schütze. – Cambridge : Cambridge University Press, 2008. – Текст : непосредственный.
+
+\item Robertson, S. The Probabilistic Relevance Framework: BM25 and Beyond / S. Robertson, H. Zaragoza // Foundations and Trends in Information Retrieval. – 2009. – Т. 3. – № 4. – С. 333–389. – Текст : непосредственный.
+
+\item Malkov, Y. A. Efficient and robust approximate nearest neighbor search using Hierarchical Navigable Small World graphs / Y. A. Malkov, D. A. Yashunin // IEEE Transactions on Pattern Analysis and Machine Intelligence. – 2020. – Т. 42. – № 4. – С. 824–836. – Текст : непосредственный.
+
+\item Johnson, J. Billion-scale similarity search with GPUs / J. Johnson, M. Douze, H. Jégou // IEEE Transactions on Big Data. – 2021. – Т. 7. – № 3. – С. 535–547. – Текст : непосредственный.
+
+\item Codd, E. F. A Relational Model of Data for Large Shared Data Banks / E. F. Codd // Communications of the ACM. – 1970. – Т. 13. – № 6. – С. 377–387. – Текст : непосредственный.
+
+\item Ullman, J. D. Principles of Database and Knowledge-Base Systems / J. D. Ullman. – Rockville : Computer Science Press, 1988. – Текст : непосредственный.
+
+\item Date, C. J. An Introduction to Database Systems / C. J. Date. – 8-е изд. – Boston : Pearson, 2004. – Текст : непосредственный.
+
+\item Garcia-Molina, H. Database Systems: The Complete Book / H. Garcia-Molina, J. D. Ullman, J. Widom. – 2-е изд. – Upper Saddle River : Pearson, 2008. – Текст : непосредственный.
+
+\item Silberschatz, A. Database System Concepts / A. Silberschatz, H. F. Korth, S. Sudarshan. – 7-е изд. – New York : McGraw-Hill Education, 2020. – Текст : непосредственный.
+
+\item Elmasri, R. Fundamentals of Database Systems / R. Elmasri, S. B. Navathe. – 7-е изд. – Boston : Pearson, 2016. – Текст : непосредственный.
+
+\item Martin, R. C. Clean Architecture: A Craftsman's Guide to Software Structure and Design / R. C. Martin. – Boston : Prentice Hall, 2017. – Текст : непосредственный.
+
+\item Fowler, M. Patterns of Enterprise Application Architecture / M. Fowler. – Boston : Addison-Wesley, 2002. – Текст : непосредственный.
+
+\item Fowler, M. Refactoring: Improving the Design of Existing Code / M. Fowler. – 2-е изд. – Boston : Addison-Wesley, 2018. – Текст : непосредственный.
+
+\item Bass, L. Software Architecture in Practice / L. Bass, P. Clements, R. Kazman. – 4-е изд. – Boston : Addison-Wesley, 2021. – Текст : непосредственный.
+
+\item Larman, C. Applying UML and Patterns / C. Larman. – 3-е изд. – Upper Saddle River : Prentice Hall, 2004. – Текст : непосредственный.
+
+\item Newman, S. Building Microservices / S. Newman. – 2-е изд. – Sebastopol : O'Reilly Media, 2021. – Текст : непосредственный.
+
+\item Richards, M. Fundamentals of Software Architecture / M. Richards, N. Ford. – Sebastopol : O'Reilly Media, 2020. – Текст : непосредственный.
+
+\item Beizer, B. Software Testing Techniques / B. Beizer. – 2-е изд. – New York : Van Nostrand Reinhold, 1990. – Текст : непосредственный.
+
+\item Myers, G. J. The Art of Software Testing / G. J. Myers, C. Sandler, T. Badgett. – 3-е изд. – Hoboken : John Wiley and Sons, 2011. – Текст : непосредственный.
+
+\item Kaner, C. Testing Computer Software / C. Kaner, J. Falk, H. Q. Nguyen. – 2-е изд. – New York : John Wiley and Sons, 1999. – Текст : непосредственный.
+
+\item Docker Documentation : сайт / Docker, Inc. – URL: \BibPlainUrl{https://docs.docker.com/} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item PostgreSQL 16: Logical Replication : сайт / The PostgreSQL Global Development Group. – URL: \BibPlainUrl{https://www.postgresql.org/docs/16/logical-replication.html} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item PostgreSQL 16: Runtime Configuration – Replication : сайт / The PostgreSQL Global Development Group. – URL: \BibPlainUrl{https://www.postgresql.org/docs/16/runtime-config-replication.html} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item FastAPI Documentation : сайт / S. Ramírez. – URL: \BibPlainUrl{https://fastapi.tiangolo.com/} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item Pydantic Documentation : сайт / Pydantic Team. – URL: \BibPlainUrl{https://pydantic.dev/docs/} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item SQLAlchemy Documentation : сайт / SQLAlchemy Authors. – URL: \BibPlainUrl{https://docs.sqlalchemy.org/20/} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item Alembic Documentation : сайт / Alembic Authors. – URL: \BibPlainUrl{https://alembic.sqlalchemy.org/} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item pgvector: Open-source vector similarity search for PostgreSQL : репозиторий / A. Kane. – URL: \BibPlainUrl{https://github.com/pgvector/pgvector} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item Beautiful Soup Documentation : сайт / L. Richardson. – URL: \BibPlainUrl{https://www.crummy.com/software/BeautifulSoup/bs4/doc/} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item HTTPX Documentation : сайт / Encode OSS Ltd. – URL: \BibPlainUrl{https://www.python-httpx.org/} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item Groq API Documentation : сайт / Groq, Inc. – URL: \BibPlainUrl{https://console.groq.com/docs/overview} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item pytest Documentation : сайт / pytest development team. – URL: \BibPlainUrl{https://docs.pytest.org/} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item PostgreSQL 16: Full Text Search : сайт / The PostgreSQL Global Development Group. – URL: \BibPlainUrl{https://www.postgresql.org/docs/16/textsearch.html} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item ГОСТ 7.32-2017. СИБИД. Отчет о научно-исследовательской работе. Структура и правила оформления : стандарт. – Москва : Стандартинформ, 2018. – Текст : непосредственный.
+
+\item ГОСТ Р 7.0.100-2018. Библиографическая запись. Библиографическое описание. Общие требования и правила составления : национальный стандарт Российской Федерации : дата введения 2019-07-01. – Москва : Стандартинформ, 2018. – 124 с. – Текст : непосредственный.
+
+\item ГОСТ Р 7.0.5-2008. СИБИД. Библиографическая ссылка. Общие требования и правила составления : национальный стандарт Российской Федерации. – Москва : Стандартинформ, 2008. – Текст : непосредственный.
+
+\item ГОСТ 19.201-78. ЕСПД. Техническое задание. Требования к содержанию и оформлению : стандарт. – Москва : Издательство стандартов, 1978. – Текст : непосредственный.
+
+\item ГОСТ 34.601-90. Информационная технология. Автоматизированные системы. Стадии создания : стандарт. – Москва : Издательство стандартов, 1990. – Текст : непосредственный.
+
+\item ГОСТ 34.602-89. Информационная технология. Техническое задание на создание автоматизированной системы : стандарт. – Москва : Издательство стандартов, 1989. – Текст : непосредственный.
+
+\item Kleppmann, M. Designing Data-Intensive Applications / M. Kleppmann. – Sebastopol : O'Reilly Media, 2017. – Текст : непосредственный.
+
+\item PostgreSQL: JSON Types : сайт / The PostgreSQL Global Development Group. – URL: \BibPlainUrl{https://www.postgresql.org/docs/current/datatype-json.html} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item PostgreSQL: UUID Type : сайт / The PostgreSQL Global Development Group. – URL: \BibPlainUrl{https://www.postgresql.org/docs/current/datatype-uuid.html} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item Python 3 Documentation : сайт / Python Software Foundation. – URL: \BibPlainUrl{https://docs.python.org/3/} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\item Sentence Transformers Documentation : сайт / UKP Lab. – URL: \BibPlainUrl{https://www.sbert.net/} (дата обращения: 10.05.2026). – Текст : электронный.
+
+\end{list}
+\endgroup
 
 
 %%% Local Variables:

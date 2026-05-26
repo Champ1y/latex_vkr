@@ -1,441 +1,1585 @@
-\begin{thebibliography}{10}
-\def\selectlanguageifdefined#1{
-\expandafter\ifx\csname date#1\endcsname\relax
-\else\language\csname l@#1\endcsname\fi}
-\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
-\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
-\ifx\undefined\BibAnnote\long\def\BibAnnote#1{}\else\fi
-\ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
 
-\bibitem{postgres-docs}
-\selectlanguageifdefined{english}
-{{The PostgreSQL Global Development Group}}. PostgreSQL Documentation. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://www.postgresql.org/docs/} (дата
-  обращения: 10.05.2026).
 
-\bibitem{postgres-docs-16}
-\selectlanguageifdefined{english}
-{{The PostgreSQL Global Development Group}}. PostgreSQL 16 Documentation. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://www.postgresql.org/docs/16/} (дата
-  обращения: 10.05.2026).
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{postgres-docs}{online}{}
+      \list{organization}{1}{%
+        {The PostgreSQL Global Development Group}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{PostgreSQL Documentation : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.postgresql.org/docs/
+      \endverb
+      \verb{url}
+      \verb https://www.postgresql.org/docs/
+      \endverb
+    \endentry
+    \entry{postgres-docs-16}{online}{}
+      \list{organization}{1}{%
+        {The PostgreSQL Global Development Group}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{PostgreSQL 16 Documentation : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.postgresql.org/docs/16/
+      \endverb
+      \verb{url}
+      \verb https://www.postgresql.org/docs/16/
+      \endverb
+    \endentry
+    \entry{postgres-docs-17}{online}{}
+      \list{organization}{1}{%
+        {The PostgreSQL Global Development Group}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{PostgreSQL 17 Documentation : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.postgresql.org/docs/17/
+      \endverb
+      \verb{url}
+      \verb https://www.postgresql.org/docs/17/
+      \endverb
+    \endentry
+    \entry{postgres-docs-18}{online}{}
+      \list{organization}{1}{%
+        {The PostgreSQL Global Development Group}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{PostgreSQL 18 Documentation : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.postgresql.org/docs/18/
+      \endverb
+      \verb{url}
+      \verb https://www.postgresql.org/docs/18/
+      \endverb
+    \endentry
+    \entry{postgres-versioning}{online}{}
+      \list{organization}{1}{%
+        {The PostgreSQL Global Development Group}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{PostgreSQL Versioning Policy : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.postgresql.org/support/versioning/
+      \endverb
+      \verb{url}
+      \verb https://www.postgresql.org/support/versioning/
+      \endverb
+    \endentry
+    \entry{postgres-release-root}{online}{}
+      \list{organization}{1}{%
+        {The PostgreSQL Global Development Group}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{PostgreSQL Release Notes Archive : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.postgresql.org/docs/release/
+      \endverb
+      \verb{url}
+      \verb https://www.postgresql.org/docs/release/
+      \endverb
+    \endentry
+    \entry{lewis2020rag}{inproceedings}{useauthor=false}
+      \name{author}{12}{}{%
+        {{hash=ecbe786a5668bf643d74bb24fe1c3cfe}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+        {{hash=79978685fd7b37606022b06c0f6419a1}{%
+           family={Perez},
+           familyi={P\bibinitperiod},
+           given={Ethan},
+           giveni={E\bibinitperiod}}}%
+        {{hash=d205faec67355b6e0ec49f82a492324c}{%
+           family={Piktus},
+           familyi={P\bibinitperiod},
+           given={Aleksandra},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e1c32989a78998fe3c03c981d0da2dc7}{%
+           family={Petroni},
+           familyi={P\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod}}}%
+        {{hash=b24392ebfb2c0a35979fc689c389c649}{%
+           family={Karpukhin},
+           familyi={K\bibinitperiod},
+           given={Vladimir},
+           giveni={V\bibinitperiod}}}%
+        {{hash=78a420900f50a8470ad085fb05231bf6}{%
+           family={Goyal},
+           familyi={G\bibinitperiod},
+           given={Naman},
+           giveni={N\bibinitperiod}}}%
+        {{hash=b2e0f8c7e3713c1429efaef33a765086}{%
+           family={Kuttler},
+           familyi={K\bibinitperiod},
+           given={Heinrich},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c97f53fdeeb04c28de19e3324cb4bc0a}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d4d56d3d370b3afd4ad2ebf985fbd3f8}{%
+           family={Yih},
+           familyi={Y\bibinitperiod},
+           given={Wen-tau},
+           giveni={W\bibinithyphendelim t\bibinitperiod}}}%
+        {{hash=bf6bd1fe5980a054333a40bb94be2383}{%
+           family={Rocktaschel},
+           familyi={R\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=6cd024b217f3f2f8126e253b8c84d24d}{%
+           family={Riedel},
+           familyi={R\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ca01c762f4a52dd8a8548508f8d727c9}{%
+           family={Kiela},
+           familyi={K\bibinitperiod},
+           given={Douwe},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{authorbibnamehash}{f238c3bfc4b30650dd17e65c4aadfc66}
+      \strng{authornamehash}{f238c3bfc4b30650dd17e65c4aadfc66}
+      \strng{authorfullhash}{2679e873d06671d191f16ea70f965605}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Neural Information Processing Systems}
+      \field{internalsortvolume}{33}
+      \field{title}{Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks}
+      \field{year}{2020}
+      \field{pages}{9459\bibrangedash 9474}
+      \range{pages}{16}
+      \field{volume}{33}
+      \range{volume}{1}
+    \endentry
+    \entry{dpr2020}{inproceedings}{useauthor=false}
+      \name{author}{7}{}{%
+        {{hash=b24392ebfb2c0a35979fc689c389c649}{%
+           family={Karpukhin},
+           familyi={K\bibinitperiod},
+           given={Vladimir},
+           giveni={V\bibinitperiod}}}%
+        {{hash=36b7f762a5e5dbccbb0c83b8ec383cc6}{%
+           family={Oguz},
+           familyi={O\bibinitperiod},
+           given={Barlas},
+           giveni={B\bibinitperiod}}}%
+        {{hash=28789ec78f6ba72f59baf40dfb377588}{%
+           family={Min},
+           familyi={M\bibinitperiod},
+           given={Sewon},
+           giveni={S\bibinitperiod}}}%
+        {{hash=9825446add26b320aea811f184ef643c}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Ledell},
+           giveni={L\bibinitperiod}}}%
+        {{hash=79caf76234e835df3dc38a785e0913e0}{%
+           family={Edunov},
+           familyi={E\bibinitperiod},
+           given={Sergey},
+           giveni={S\bibinitperiod}}}%
+        {{hash=aed188db3fc6855ac5666aa14e04a3bb}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Danqi},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d4d56d3d370b3afd4ad2ebf985fbd3f8}{%
+           family={Yih},
+           familyi={Y\bibinitperiod},
+           given={Wen-tau},
+           giveni={W\bibinithyphendelim t\bibinitperiod}}}%
+      }
+      \strng{authorbibnamehash}{95ef335ab136ed8801520b97e3354110}
+      \strng{authornamehash}{95ef335ab136ed8801520b97e3354110}
+      \strng{authorfullhash}{43910f3ee7a853f6754a568c4ab88f3e}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing}
+      \field{title}{Dense Passage Retrieval for Open-Domain Question Answering}
+      \field{year}{2020}
+      \field{pages}{6769\bibrangedash 6781}
+      \range{pages}{13}
+    \endentry
+    \entry{sbert2019}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=da9947b27b0d1c4c912e2b391426d443}{%
+           family={Reimers},
+           familyi={R\bibinitperiod},
+           given={Nils},
+           giveni={N\bibinitperiod}}}%
+        {{hash=ea70b44be1920f6e8c379706bc7d047a}{%
+           family={Gurevych},
+           familyi={G\bibinitperiod},
+           given={Iryna},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{2466af6376c9c5e3658dcc6692351f3e}
+      \strng{fullhash}{2466af6376c9c5e3658dcc6692351f3e}
+      \strng{bibnamehash}{2466af6376c9c5e3658dcc6692351f3e}
+      \strng{authorbibnamehash}{2466af6376c9c5e3658dcc6692351f3e}
+      \strng{authornamehash}{2466af6376c9c5e3658dcc6692351f3e}
+      \strng{authorfullhash}{2466af6376c9c5e3658dcc6692351f3e}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing}
+      \field{title}{Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks}
+      \field{year}{2019}
+      \field{pages}{3982\bibrangedash 3992}
+      \range{pages}{11}
+    \endentry
+    \entry{colbert2020}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=7c1f69df368375faab52ad37587dfd85}{%
+           family={Khattab},
+           familyi={K\bibinitperiod},
+           given={Omar},
+           giveni={O\bibinitperiod}}}%
+        {{hash=00dc518b94dfa6349c86e70661a1a5ef}{%
+           family={Zaharia},
+           familyi={Z\bibinitperiod},
+           given={Matei},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{68617000ef7d18c09d236460516fde26}
+      \strng{fullhash}{68617000ef7d18c09d236460516fde26}
+      \strng{bibnamehash}{68617000ef7d18c09d236460516fde26}
+      \strng{authorbibnamehash}{68617000ef7d18c09d236460516fde26}
+      \strng{authornamehash}{68617000ef7d18c09d236460516fde26}
+      \strng{authorfullhash}{68617000ef7d18c09d236460516fde26}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval}
+      \field{title}{ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT}
+      \field{year}{2020}
+      \field{pages}{39\bibrangedash 48}
+      \range{pages}{10}
+    \endentry
+    \entry{bert2018}{inproceedings}{useauthor=false}
+      \name{author}{4}{}{%
+        {{hash=13202969e372bc82318f9629cbdd199b}{%
+           family={Devlin},
+           familyi={D\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a45784fe7163b45f11d166564f5d24b6}{%
+           family={Chang},
+           familyi={C\bibinitperiod},
+           given={Ming-Wei},
+           giveni={M\bibinithyphendelim W\bibinitperiod}}}%
+        {{hash=8dde73b4194f5bc4230c4808f3fc1534}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Kenton},
+           giveni={K\bibinitperiod}}}%
+        {{hash=b92aa283415413bb8d2a1548716d0c7d}{%
+           family={Toutanova},
+           familyi={T\bibinitperiod},
+           given={Kristina},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{authorbibnamehash}{ad8e2e2a80d28ade21e86852b804fc9b}
+      \strng{authornamehash}{ad8e2e2a80d28ade21e86852b804fc9b}
+      \strng{authorfullhash}{e8bccd48302a14eeba57d9dce2f49ef4}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of NAACL-HLT 2019}
+      \field{title}{BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding}
+      \field{year}{2019}
+      \field{pages}{4171\bibrangedash 4186}
+      \range{pages}{16}
+    \endentry
+    \entry{sommerville2016}{book}{}
+      \name{author}{1}{}{%
+        {{hash=70341b3bfcce7026902f4eb1e4111b58}{%
+           family={Sommerville},
+           familyi={S\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boston}%
+      }
+      \list{publisher}{1}{%
+        {Pearson}%
+      }
+      \strng{namehash}{70341b3bfcce7026902f4eb1e4111b58}
+      \strng{fullhash}{70341b3bfcce7026902f4eb1e4111b58}
+      \strng{bibnamehash}{70341b3bfcce7026902f4eb1e4111b58}
+      \strng{authorbibnamehash}{70341b3bfcce7026902f4eb1e4111b58}
+      \strng{authornamehash}{70341b3bfcce7026902f4eb1e4111b58}
+      \strng{authorfullhash}{70341b3bfcce7026902f4eb1e4111b58}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{10}
+      \field{title}{Software Engineering}
+      \field{year}{2016}
+    \endentry
+    \entry{pressman2020}{book}{}
+      \name{author}{2}{}{%
+        {{hash=4d3f81788d99cf425c4b6e0a454baab0}{%
+           family={Pressman},
+           familyi={P\bibinitperiod},
+           given={Roger\bibnamedelima S.},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=13b3d71ce7fd3614b4e2e9ce804597f3}{%
+           family={Maxim},
+           familyi={M\bibinitperiod},
+           given={Bruce\bibnamedelima R.},
+           giveni={B\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {McGraw-Hill Education}%
+      }
+      \strng{namehash}{da6ec91488daec8c3c9eddf18c78dad8}
+      \strng{fullhash}{da6ec91488daec8c3c9eddf18c78dad8}
+      \strng{bibnamehash}{da6ec91488daec8c3c9eddf18c78dad8}
+      \strng{authorbibnamehash}{da6ec91488daec8c3c9eddf18c78dad8}
+      \strng{authornamehash}{da6ec91488daec8c3c9eddf18c78dad8}
+      \strng{authorfullhash}{da6ec91488daec8c3c9eddf18c78dad8}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{9}
+      \field{title}{Software Engineering: A Practitioner's Approach}
+      \field{year}{2020}
+    \endentry
+    \entry{gost-r-iso-25010-2015}{reference}{}
+      \list{location}{1}{%
+        {Москва}%
+      }
+      \list{publisher}{1}{%
+        {Стандартинформ}%
+      }
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{heading}{ГОСТ Р ИСО/МЭК 25010-2015}
+      \field{media}{text}
+      \field{title}{Требования и оценка качества систем и программного обеспечения. Модели качества}
+      \field{year}{2016}
+    \endentry
+    \entry{manning2008}{book}{}
+      \name{author}{3}{}{%
+        {{hash=2214edb8305f7ccd7cdc310b3a8ae1b4}{%
+           family={Manning},
+           familyi={M\bibinitperiod},
+           given={Christopher\bibnamedelima D.},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=68f523934985e2f967ab2b15f4ded07c}{%
+           family={Raghavan},
+           familyi={R\bibinitperiod},
+           given={Prabhakar},
+           giveni={P\bibinitperiod}}}%
+        {{hash=9a80de0e5ec6df57363aaf321a5d05be}{%
+           family={Schütze},
+           familyi={S\bibinitperiod},
+           given={Hinrich},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{56b44e50eec2e98e36ad6aa3a5e7af9b}
+      \strng{fullhash}{56b44e50eec2e98e36ad6aa3a5e7af9b}
+      \strng{bibnamehash}{56b44e50eec2e98e36ad6aa3a5e7af9b}
+      \strng{authorbibnamehash}{56b44e50eec2e98e36ad6aa3a5e7af9b}
+      \strng{authornamehash}{56b44e50eec2e98e36ad6aa3a5e7af9b}
+      \strng{authorfullhash}{56b44e50eec2e98e36ad6aa3a5e7af9b}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Introduction to Information Retrieval}
+      \field{year}{2008}
+    \endentry
+    \entry{bm25-prf}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c7dab237c14cbb4e5def052a91d7ec99}{%
+           family={Robertson},
+           familyi={R\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+        {{hash=cc9cdb3b111faeedc87e7f6c561d2ff8}{%
+           family={Zaragoza},
+           familyi={Z\bibinitperiod},
+           given={Hugo},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{f0a2bfb8afb93f12dec6aaefe2c3199a}
+      \strng{fullhash}{f0a2bfb8afb93f12dec6aaefe2c3199a}
+      \strng{bibnamehash}{f0a2bfb8afb93f12dec6aaefe2c3199a}
+      \strng{authorbibnamehash}{f0a2bfb8afb93f12dec6aaefe2c3199a}
+      \strng{authornamehash}{f0a2bfb8afb93f12dec6aaefe2c3199a}
+      \strng{authorfullhash}{f0a2bfb8afb93f12dec6aaefe2c3199a}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{internalsortvolume}{3}
+      \field{journaltitle}{Foundations and Trends in Information Retrieval}
+      \field{title}{The Probabilistic Relevance Framework: BM25 and Beyond}
+      \field{year}{2009}
+      \field{number}{4}
+      \range{number}{1}
+      \field{pages}{333\bibrangedash 389}
+      \range{pages}{57}
+      \field{volume}{3}
+      \range{volume}{1}
+    \endentry
+    \entry{hnsw2016}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1761d9a54a91e198bbbb1ab8c90b87cf}{%
+           family={Malkov},
+           familyi={M\bibinitperiod},
+           given={Yu.\bibnamedelimi A.},
+           giveni={Y\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=0ab161f0ecfa8c1f0510bd561839d6ac}{%
+           family={Yashunin},
+           familyi={Y\bibinitperiod},
+           given={D.\bibnamedelimi A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{41f677ba5b31db2db6a749a416e76e0e}
+      \strng{fullhash}{41f677ba5b31db2db6a749a416e76e0e}
+      \strng{bibnamehash}{41f677ba5b31db2db6a749a416e76e0e}
+      \strng{authorbibnamehash}{41f677ba5b31db2db6a749a416e76e0e}
+      \strng{authornamehash}{41f677ba5b31db2db6a749a416e76e0e}
+      \strng{authorfullhash}{41f677ba5b31db2db6a749a416e76e0e}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{internalsortvolume}{42}
+      \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+      \field{title}{Efficient and robust approximate nearest neighbor search using Hierarchical Navigable Small World graphs}
+      \field{year}{2020}
+      \field{number}{4}
+      \range{number}{1}
+      \field{pages}{824\bibrangedash 836}
+      \range{pages}{13}
+      \field{volume}{42}
+      \range{volume}{1}
+    \endentry
+    \entry{faiss2017}{article}{}
+      \name{author}{3}{}{%
+        {{hash=1805e103501075ef0b21851b4259f4a3}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Jeff},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e9190eb3cfa416148f38314a0698d592}{%
+           family={Douze},
+           familyi={D\bibinitperiod},
+           given={Matthijs},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a2329be98a372037fcb95334bdc0c720}{%
+           family={Jégou},
+           familyi={J\bibinitperiod},
+           given={Hervé},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{56312ad5556c436281266d9cb1d0863a}
+      \strng{fullhash}{56312ad5556c436281266d9cb1d0863a}
+      \strng{bibnamehash}{56312ad5556c436281266d9cb1d0863a}
+      \strng{authorbibnamehash}{56312ad5556c436281266d9cb1d0863a}
+      \strng{authornamehash}{56312ad5556c436281266d9cb1d0863a}
+      \strng{authorfullhash}{56312ad5556c436281266d9cb1d0863a}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{internalsortvolume}{7}
+      \field{journaltitle}{IEEE Transactions on Big Data}
+      \field{title}{Billion-scale similarity search with GPUs}
+      \field{year}{2021}
+      \field{number}{3}
+      \range{number}{1}
+      \field{pages}{535\bibrangedash 547}
+      \range{pages}{13}
+      \field{volume}{7}
+      \range{volume}{1}
+    \endentry
+    \entry{codd1970}{article}{}
+      \name{author}{1}{}{%
+        {{hash=575e6ec8dab1a34c19f7021664baaccc}{%
+           family={Codd},
+           familyi={C\bibinitperiod},
+           given={E.\bibnamedelimi F.},
+           giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{575e6ec8dab1a34c19f7021664baaccc}
+      \strng{fullhash}{575e6ec8dab1a34c19f7021664baaccc}
+      \strng{bibnamehash}{575e6ec8dab1a34c19f7021664baaccc}
+      \strng{authorbibnamehash}{575e6ec8dab1a34c19f7021664baaccc}
+      \strng{authornamehash}{575e6ec8dab1a34c19f7021664baaccc}
+      \strng{authorfullhash}{575e6ec8dab1a34c19f7021664baaccc}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{internalsortvolume}{13}
+      \field{journaltitle}{Communications of the ACM}
+      \field{title}{A Relational Model of Data for Large Shared Data Banks}
+      \field{year}{1970}
+      \field{number}{6}
+      \range{number}{1}
+      \field{pages}{377\bibrangedash 387}
+      \range{pages}{11}
+      \field{volume}{13}
+      \range{volume}{1}
+    \endentry
+    \entry{ullman1988}{book}{}
+      \name{author}{1}{}{%
+        {{hash=cafe1d770c56825ebccdb81e9f7c9b3b}{%
+           family={Ullman},
+           familyi={U\bibinitperiod},
+           given={Jeffrey\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Rockville}%
+      }
+      \list{publisher}{1}{%
+        {Computer Science Press}%
+      }
+      \strng{namehash}{cafe1d770c56825ebccdb81e9f7c9b3b}
+      \strng{fullhash}{cafe1d770c56825ebccdb81e9f7c9b3b}
+      \strng{bibnamehash}{cafe1d770c56825ebccdb81e9f7c9b3b}
+      \strng{authorbibnamehash}{cafe1d770c56825ebccdb81e9f7c9b3b}
+      \strng{authornamehash}{cafe1d770c56825ebccdb81e9f7c9b3b}
+      \strng{authorfullhash}{cafe1d770c56825ebccdb81e9f7c9b3b}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Principles of Database and Knowledge-Base Systems}
+      \field{year}{1988}
+    \endentry
+    \entry{date2004}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c09e33f0c9dc5770fb91e75cdc21d569}{%
+           family={Date},
+           familyi={D\bibinitperiod},
+           given={C.\bibnamedelimi J.},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boston}%
+      }
+      \list{publisher}{1}{%
+        {Pearson}%
+      }
+      \strng{namehash}{c09e33f0c9dc5770fb91e75cdc21d569}
+      \strng{fullhash}{c09e33f0c9dc5770fb91e75cdc21d569}
+      \strng{bibnamehash}{c09e33f0c9dc5770fb91e75cdc21d569}
+      \strng{authorbibnamehash}{c09e33f0c9dc5770fb91e75cdc21d569}
+      \strng{authornamehash}{c09e33f0c9dc5770fb91e75cdc21d569}
+      \strng{authorfullhash}{c09e33f0c9dc5770fb91e75cdc21d569}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{8}
+      \field{title}{An Introduction to Database Systems}
+      \field{year}{2004}
+    \endentry
+    \entry{garcia2008}{book}{}
+      \name{author}{3}{}{%
+        {{hash=7b6f78bee4d74fb4edb7a42ad7e3c2ad}{%
+           family={Garcia-Molina},
+           familyi={G\bibinithyphendelim M\bibinitperiod},
+           given={Hector},
+           giveni={H\bibinitperiod}}}%
+        {{hash=cafe1d770c56825ebccdb81e9f7c9b3b}{%
+           family={Ullman},
+           familyi={U\bibinitperiod},
+           given={Jeffrey\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=f5c9bf7d1fe609c7c5aa35cdee017284}{%
+           family={Widom},
+           familyi={W\bibinitperiod},
+           given={Jennifer},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Upper Saddle River}%
+      }
+      \list{publisher}{1}{%
+        {Pearson}%
+      }
+      \strng{namehash}{8a1f188b3e552426bdcfd1f584d7a66b}
+      \strng{fullhash}{8a1f188b3e552426bdcfd1f584d7a66b}
+      \strng{bibnamehash}{8a1f188b3e552426bdcfd1f584d7a66b}
+      \strng{authorbibnamehash}{8a1f188b3e552426bdcfd1f584d7a66b}
+      \strng{authornamehash}{8a1f188b3e552426bdcfd1f584d7a66b}
+      \strng{authorfullhash}{8a1f188b3e552426bdcfd1f584d7a66b}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Database Systems: The Complete Book}
+      \field{year}{2008}
+    \endentry
+    \entry{silberschatz2020}{book}{}
+      \name{author}{3}{}{%
+        {{hash=525ecdcf12996b3d68e3c71d7526bf35}{%
+           family={Silberschatz},
+           familyi={S\bibinitperiod},
+           given={Abraham},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1640aebebaf3b1913d7477fe0f7675e0}{%
+           family={Korth},
+           familyi={K\bibinitperiod},
+           given={Henry\bibnamedelima F.},
+           giveni={H\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=61d6a2d7215571ff54eadda8d36a2d58}{%
+           family={Sudarshan},
+           familyi={S\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {McGraw-Hill Education}%
+      }
+      \strng{namehash}{4c269a32abf2e4056c1b534993062a6b}
+      \strng{fullhash}{4c269a32abf2e4056c1b534993062a6b}
+      \strng{bibnamehash}{4c269a32abf2e4056c1b534993062a6b}
+      \strng{authorbibnamehash}{4c269a32abf2e4056c1b534993062a6b}
+      \strng{authornamehash}{4c269a32abf2e4056c1b534993062a6b}
+      \strng{authorfullhash}{4c269a32abf2e4056c1b534993062a6b}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{7}
+      \field{title}{Database System Concepts}
+      \field{year}{2020}
+    \endentry
+    \entry{elmasri2016}{book}{}
+      \name{author}{2}{}{%
+        {{hash=c7e2fe1a0e649bf469f3feb7c5aa840d}{%
+           family={Elmasri},
+           familyi={E\bibinitperiod},
+           given={Ramez},
+           giveni={R\bibinitperiod}}}%
+        {{hash=4ae94109c6efa1688beb655559324ba2}{%
+           family={Navathe},
+           familyi={N\bibinitperiod},
+           given={Shamkant\bibnamedelima B.},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boston}%
+      }
+      \list{publisher}{1}{%
+        {Pearson}%
+      }
+      \strng{namehash}{2e8829be23557c692dac07b198a7df6e}
+      \strng{fullhash}{2e8829be23557c692dac07b198a7df6e}
+      \strng{bibnamehash}{2e8829be23557c692dac07b198a7df6e}
+      \strng{authorbibnamehash}{2e8829be23557c692dac07b198a7df6e}
+      \strng{authornamehash}{2e8829be23557c692dac07b198a7df6e}
+      \strng{authorfullhash}{2e8829be23557c692dac07b198a7df6e}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{7}
+      \field{title}{Fundamentals of Database Systems}
+      \field{year}{2016}
+    \endentry
+    \entry{martin2017}{book}{}
+      \name{author}{1}{}{%
+        {{hash=6f41df64eb0dc4855be70172368604c2}{%
+           family={Martin},
+           familyi={M\bibinitperiod},
+           given={Robert\bibnamedelima C.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boston}%
+      }
+      \list{publisher}{1}{%
+        {Prentice Hall}%
+      }
+      \strng{namehash}{6f41df64eb0dc4855be70172368604c2}
+      \strng{fullhash}{6f41df64eb0dc4855be70172368604c2}
+      \strng{bibnamehash}{6f41df64eb0dc4855be70172368604c2}
+      \strng{authorbibnamehash}{6f41df64eb0dc4855be70172368604c2}
+      \strng{authornamehash}{6f41df64eb0dc4855be70172368604c2}
+      \strng{authorfullhash}{6f41df64eb0dc4855be70172368604c2}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Clean Architecture: A Craftsman's Guide to Software Structure and Design}
+      \field{year}{2017}
+    \endentry
+    \entry{fowler2002}{book}{}
+      \name{author}{1}{}{%
+        {{hash=312ac886938a9b2be4f8eb607567fe4c}{%
+           family={Fowler},
+           familyi={F\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boston}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{bibnamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorbibnamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authornamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorfullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \field{extraname}{1}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Patterns of Enterprise Application Architecture}
+      \field{year}{2002}
+    \endentry
+    \entry{fowler2018}{book}{}
+      \name{author}{1}{}{%
+        {{hash=312ac886938a9b2be4f8eb607567fe4c}{%
+           family={Fowler},
+           familyi={F\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boston}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{bibnamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorbibnamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authornamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorfullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \field{extraname}{2}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Refactoring: Improving the Design of Existing Code}
+      \field{year}{2018}
+    \endentry
+    \entry{bass2021}{book}{}
+      \name{author}{3}{}{%
+        {{hash=97196c0aaced1368c3042b9299a9b34b}{%
+           family={Bass},
+           familyi={B\bibinitperiod},
+           given={Len},
+           giveni={L\bibinitperiod}}}%
+        {{hash=806866eee4e5b55ba7360bfe43f4f397}{%
+           family={Clements},
+           familyi={C\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=4a2e06c3fa40bc2221536e74ab90b7ec}{%
+           family={Kazman},
+           familyi={K\bibinitperiod},
+           given={Rick},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boston}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{f3c472223052fa8f8a1c396381e08cd3}
+      \strng{fullhash}{f3c472223052fa8f8a1c396381e08cd3}
+      \strng{bibnamehash}{f3c472223052fa8f8a1c396381e08cd3}
+      \strng{authorbibnamehash}{f3c472223052fa8f8a1c396381e08cd3}
+      \strng{authornamehash}{f3c472223052fa8f8a1c396381e08cd3}
+      \strng{authorfullhash}{f3c472223052fa8f8a1c396381e08cd3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{4}
+      \field{title}{Software Architecture in Practice}
+      \field{year}{2021}
+    \endentry
+    \entry{larman2004}{book}{}
+      \name{author}{1}{}{%
+        {{hash=be7db5922f05fc919bdc1c036502e5ee}{%
+           family={Larman},
+           familyi={L\bibinitperiod},
+           given={Craig},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Upper Saddle River}%
+      }
+      \list{publisher}{1}{%
+        {Prentice Hall}%
+      }
+      \strng{namehash}{be7db5922f05fc919bdc1c036502e5ee}
+      \strng{fullhash}{be7db5922f05fc919bdc1c036502e5ee}
+      \strng{bibnamehash}{be7db5922f05fc919bdc1c036502e5ee}
+      \strng{authorbibnamehash}{be7db5922f05fc919bdc1c036502e5ee}
+      \strng{authornamehash}{be7db5922f05fc919bdc1c036502e5ee}
+      \strng{authorfullhash}{be7db5922f05fc919bdc1c036502e5ee}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{title}{Applying UML and Patterns}
+      \field{year}{2004}
+    \endentry
+    \entry{newman2021}{book}{}
+      \name{author}{1}{}{%
+        {{hash=b6be43602c2787d279f8522a7d9713db}{%
+           family={Newman},
+           familyi={N\bibinitperiod},
+           given={Sam},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Sebastopol}%
+      }
+      \list{publisher}{1}{%
+        {O'Reilly Media}%
+      }
+      \strng{namehash}{b6be43602c2787d279f8522a7d9713db}
+      \strng{fullhash}{b6be43602c2787d279f8522a7d9713db}
+      \strng{bibnamehash}{b6be43602c2787d279f8522a7d9713db}
+      \strng{authorbibnamehash}{b6be43602c2787d279f8522a7d9713db}
+      \strng{authornamehash}{b6be43602c2787d279f8522a7d9713db}
+      \strng{authorfullhash}{b6be43602c2787d279f8522a7d9713db}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Building Microservices}
+      \field{year}{2021}
+    \endentry
+    \entry{richards2020}{book}{}
+      \name{author}{2}{}{%
+        {{hash=8e3c0b09130cc7c13c7cda6ef28a7d48}{%
+           family={Richards},
+           familyi={R\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5ffeeeb533dfcb3c39bada5fdcf44fc0}{%
+           family={Ford},
+           familyi={F\bibinitperiod},
+           given={Neal},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Sebastopol}%
+      }
+      \list{publisher}{1}{%
+        {O'Reilly Media}%
+      }
+      \strng{namehash}{755202f5a26937dce6816860584aac24}
+      \strng{fullhash}{755202f5a26937dce6816860584aac24}
+      \strng{bibnamehash}{755202f5a26937dce6816860584aac24}
+      \strng{authorbibnamehash}{755202f5a26937dce6816860584aac24}
+      \strng{authornamehash}{755202f5a26937dce6816860584aac24}
+      \strng{authorfullhash}{755202f5a26937dce6816860584aac24}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Fundamentals of Software Architecture}
+      \field{year}{2020}
+    \endentry
+    \entry{beizer1990}{book}{}
+      \name{author}{1}{}{%
+        {{hash=40b371da86c2ce0dc19684b2a3d7f3bb}{%
+           family={Beizer},
+           familyi={B\bibinitperiod},
+           given={Boris},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Van Nostrand Reinhold}%
+      }
+      \strng{namehash}{40b371da86c2ce0dc19684b2a3d7f3bb}
+      \strng{fullhash}{40b371da86c2ce0dc19684b2a3d7f3bb}
+      \strng{bibnamehash}{40b371da86c2ce0dc19684b2a3d7f3bb}
+      \strng{authorbibnamehash}{40b371da86c2ce0dc19684b2a3d7f3bb}
+      \strng{authornamehash}{40b371da86c2ce0dc19684b2a3d7f3bb}
+      \strng{authorfullhash}{40b371da86c2ce0dc19684b2a3d7f3bb}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Software Testing Techniques}
+      \field{year}{1990}
+    \endentry
+    \entry{myers2011}{book}{}
+      \name{author}{3}{}{%
+        {{hash=156343f4cbccb0e4838a03e1aa379f1c}{%
+           family={Myers},
+           familyi={M\bibinitperiod},
+           given={Glenford\bibnamedelima J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=6bedbc386e093a07f6c0696fa075b157}{%
+           family={Sandler},
+           familyi={S\bibinitperiod},
+           given={Corey},
+           giveni={C\bibinitperiod}}}%
+        {{hash=14b5444d5651db3fbde7bcd5553fd0ec}{%
+           family={Badgett},
+           familyi={B\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Hoboken}%
+      }
+      \list{publisher}{2}{%
+        {John Wiley}%
+        {Sons}%
+      }
+      \strng{namehash}{de4835ca5e0529d5a2f5f52e5e9cc011}
+      \strng{fullhash}{de4835ca5e0529d5a2f5f52e5e9cc011}
+      \strng{bibnamehash}{de4835ca5e0529d5a2f5f52e5e9cc011}
+      \strng{authorbibnamehash}{de4835ca5e0529d5a2f5f52e5e9cc011}
+      \strng{authornamehash}{de4835ca5e0529d5a2f5f52e5e9cc011}
+      \strng{authorfullhash}{de4835ca5e0529d5a2f5f52e5e9cc011}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{title}{The Art of Software Testing}
+      \field{year}{2011}
+    \endentry
+    \entry{kaner1999}{book}{}
+      \name{author}{3}{}{%
+        {{hash=817bdfdcd06395da2e1b93e2ced3fe58}{%
+           family={Kaner},
+           familyi={K\bibinitperiod},
+           given={Cem},
+           giveni={C\bibinitperiod}}}%
+        {{hash=f88c906027c6c8fd73c500086d1f0a09}{%
+           family={Falk},
+           familyi={F\bibinitperiod},
+           given={Jack},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a2d5df17c2235c5c1bf5f37a08cd8048}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Hung\bibnamedelima Q.},
+           giveni={H\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{2}{%
+        {John Wiley}%
+        {Sons}%
+      }
+      \strng{namehash}{d9ed2a3fbfb65a708915e33b766ef67b}
+      \strng{fullhash}{d9ed2a3fbfb65a708915e33b766ef67b}
+      \strng{bibnamehash}{d9ed2a3fbfb65a708915e33b766ef67b}
+      \strng{authorbibnamehash}{d9ed2a3fbfb65a708915e33b766ef67b}
+      \strng{authornamehash}{d9ed2a3fbfb65a708915e33b766ef67b}
+      \strng{authorfullhash}{d9ed2a3fbfb65a708915e33b766ef67b}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Testing Computer Software}
+      \field{year}{1999}
+    \endentry
+    \entry{docker-docs}{online}{}
+      \list{organization}{1}{%
+        {Docker, Inc.}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{Docker Documentation : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.docker.com/
+      \endverb
+      \verb{url}
+      \verb https://docs.docker.com/
+      \endverb
+    \endentry
+    \entry{postgres-logical-replication-16}{online}{}
+      \list{organization}{1}{%
+        {The PostgreSQL Global Development Group}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{PostgreSQL 16: Logical Replication : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.postgresql.org/docs/16/logical-replication.html
+      \endverb
+      \verb{url}
+      \verb https://www.postgresql.org/docs/16/logical-replication.html
+      \endverb
+    \endentry
+    \entry{postgres-runtime-config-repl-16}{online}{}
+      \list{organization}{1}{%
+        {The PostgreSQL Global Development Group}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{PostgreSQL 16: Runtime Configuration -- Replication : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.postgresql.org/docs/16/runtime-config-replication.html
+      \endverb
+      \verb{url}
+      \verb https://www.postgresql.org/docs/16/runtime-config-replication.html
+      \endverb
+    \endentry
+    \entry{fastapi-docs}{online}{}
+      \name{author}{1}{}{%
+        {{hash=f5305ee02dd2a5c6215b53401b4a10b0}{%
+           family={Ramírez},
+           familyi={R\bibinitperiod},
+           given={Sebastián},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{f5305ee02dd2a5c6215b53401b4a10b0}
+      \strng{fullhash}{f5305ee02dd2a5c6215b53401b4a10b0}
+      \strng{bibnamehash}{f5305ee02dd2a5c6215b53401b4a10b0}
+      \strng{authorbibnamehash}{f5305ee02dd2a5c6215b53401b4a10b0}
+      \strng{authornamehash}{f5305ee02dd2a5c6215b53401b4a10b0}
+      \strng{authorfullhash}{f5305ee02dd2a5c6215b53401b4a10b0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{FastAPI Documentation : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://fastapi.tiangolo.com/
+      \endverb
+      \verb{url}
+      \verb https://fastapi.tiangolo.com/
+      \endverb
+    \endentry
+    \entry{pydantic-docs}{online}{}
+      \list{organization}{1}{%
+        {Pydantic Team}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{Pydantic Documentation : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://pydantic.dev/docs/
+      \endverb
+      \verb{url}
+      \verb https://pydantic.dev/docs/
+      \endverb
+    \endentry
+    \entry{sqlalchemy-docs}{online}{}
+      \list{organization}{1}{%
+        {SQLAlchemy Authors}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{SQLAlchemy Documentation : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.sqlalchemy.org/20/
+      \endverb
+      \verb{url}
+      \verb https://docs.sqlalchemy.org/20/
+      \endverb
+    \endentry
+    \entry{alembic-docs}{online}{}
+      \list{organization}{1}{%
+        {Alembic Authors}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{Alembic Documentation : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://alembic.sqlalchemy.org/
+      \endverb
+      \verb{url}
+      \verb https://alembic.sqlalchemy.org/
+      \endverb
+    \endentry
+    \entry{pgvector}{online}{}
+      \name{author}{1}{}{%
+        {{hash=2dc1a3a0cdb7aaa86fbd8d88b5c384e8}{%
+           family={Kane},
+           familyi={K\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{2dc1a3a0cdb7aaa86fbd8d88b5c384e8}
+      \strng{fullhash}{2dc1a3a0cdb7aaa86fbd8d88b5c384e8}
+      \strng{bibnamehash}{2dc1a3a0cdb7aaa86fbd8d88b5c384e8}
+      \strng{authorbibnamehash}{2dc1a3a0cdb7aaa86fbd8d88b5c384e8}
+      \strng{authornamehash}{2dc1a3a0cdb7aaa86fbd8d88b5c384e8}
+      \strng{authorfullhash}{2dc1a3a0cdb7aaa86fbd8d88b5c384e8}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{pgvector: Open-source vector similarity search for PostgreSQL : репозиторий}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/pgvector/pgvector
+      \endverb
+      \verb{url}
+      \verb https://github.com/pgvector/pgvector
+      \endverb
+    \endentry
+    \entry{beautifulsoup-docs}{online}{}
+      \name{author}{1}{}{%
+        {{hash=1d85fbf65464db3ffcf0c108192462b8}{%
+           family={Richardson},
+           familyi={R\bibinitperiod},
+           given={Leonard},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{1d85fbf65464db3ffcf0c108192462b8}
+      \strng{fullhash}{1d85fbf65464db3ffcf0c108192462b8}
+      \strng{bibnamehash}{1d85fbf65464db3ffcf0c108192462b8}
+      \strng{authorbibnamehash}{1d85fbf65464db3ffcf0c108192462b8}
+      \strng{authornamehash}{1d85fbf65464db3ffcf0c108192462b8}
+      \strng{authorfullhash}{1d85fbf65464db3ffcf0c108192462b8}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{Beautiful Soup Documentation : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+      \endverb
+      \verb{url}
+      \verb https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+      \endverb
+    \endentry
+    \entry{httpx-docs}{online}{}
+      \list{organization}{1}{%
+        {Encode OSS Ltd.}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{HTTPX Documentation : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.python-httpx.org/
+      \endverb
+      \verb{url}
+      \verb https://www.python-httpx.org/
+      \endverb
+    \endentry
+    \entry{groq-docs}{online}{}
+      \list{organization}{1}{%
+        {Groq, Inc.}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{Groq API Documentation : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://console.groq.com/docs/overview
+      \endverb
+      \verb{url}
+      \verb https://console.groq.com/docs/overview
+      \endverb
+    \endentry
+    \entry{pytest-docs}{online}{}
+      \list{organization}{1}{%
+        {pytest development team}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{pytest Documentation : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.pytest.org/
+      \endverb
+      \verb{url}
+      \verb https://docs.pytest.org/
+      \endverb
+    \endentry
+    \entry{postgres-textsearch-16}{online}{}
+      \list{organization}{1}{%
+        {The PostgreSQL Global Development Group}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{PostgreSQL 16: Full Text Search : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.postgresql.org/docs/16/textsearch.html
+      \endverb
+      \verb{url}
+      \verb https://www.postgresql.org/docs/16/textsearch.html
+      \endverb
+    \endentry
+    \entry{gost-7-32-2017}{reference}{}
+      \list{location}{1}{%
+        {Москва}%
+      }
+      \list{publisher}{1}{%
+        {Стандартинформ}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{heading}{ГОСТ 7.32-2017}
+      \field{media}{text}
+      \field{title}{СИБИД. Отчет о научно-исследовательской работе. Структура и правила оформления}
+      \field{year}{2018}
+    \endentry
+    \entry{gost-r-7-0-100-2018}{reference}{}
+      \list{location}{1}{%
+        {Москва}%
+      }
+      \list{publisher}{1}{%
+        {Стандартинформ}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{heading}{ГОСТ Р 7.0.100-2018}
+      \field{media}{text}
+      \field{title}{СИБИД. Библиографическая запись. Библиографическое описание. Общие требования и правила составления}
+      \field{year}{2018}
+    \endentry
+    \entry{gost-r-7-0-5-2008}{reference}{}
+      \list{location}{1}{%
+        {Москва}%
+      }
+      \list{publisher}{1}{%
+        {Стандартинформ}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{heading}{ГОСТ Р 7.0.5-2008}
+      \field{media}{text}
+      \field{title}{СИБИД. Библиографическая ссылка. Общие требования и правила составления}
+      \field{year}{2008}
+    \endentry
+    \entry{gost-19-201-78}{reference}{}
+      \list{location}{1}{%
+        {Москва}%
+      }
+      \list{publisher}{1}{%
+        {Издательство стандартов}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{heading}{ГОСТ 19.201-78}
+      \field{media}{text}
+      \field{title}{ЕСПД. Техническое задание. Требования к содержанию и оформлению}
+      \field{year}{1978}
+    \endentry
+    \entry{gost-34-601-90}{reference}{}
+      \list{location}{1}{%
+        {Москва}%
+      }
+      \list{publisher}{1}{%
+        {Издательство стандартов}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{heading}{ГОСТ 34.601-90}
+      \field{media}{text}
+      \field{title}{Информационная технология. Автоматизированные системы. Стадии создания}
+      \field{year}{1990}
+    \endentry
+    \entry{gost-34-602-89}{reference}{}
+      \list{location}{1}{%
+        {Москва}%
+      }
+      \list{publisher}{1}{%
+        {Издательство стандартов}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{heading}{ГОСТ 34.602-89}
+      \field{media}{text}
+      \field{title}{Информационная технология. Техническое задание на создание автоматизированной системы}
+      \field{year}{1989}
+    \endentry
+    \entry{kleppmann2017}{book}{}
+      \name{author}{1}{}{%
+        {{hash=34b8d5b1d29d175527a6642f3ec8a76d}{%
+           family={Kleppmann},
+           familyi={K\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Sebastopol}%
+      }
+      \list{publisher}{1}{%
+        {O'Reilly Media}%
+      }
+      \strng{namehash}{34b8d5b1d29d175527a6642f3ec8a76d}
+      \strng{fullhash}{34b8d5b1d29d175527a6642f3ec8a76d}
+      \strng{bibnamehash}{34b8d5b1d29d175527a6642f3ec8a76d}
+      \strng{authorbibnamehash}{34b8d5b1d29d175527a6642f3ec8a76d}
+      \strng{authornamehash}{34b8d5b1d29d175527a6642f3ec8a76d}
+      \strng{authorfullhash}{34b8d5b1d29d175527a6642f3ec8a76d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Designing Data-Intensive Applications}
+      \field{year}{2017}
+    \endentry
+    \entry{postgres-json-types-current}{online}{}
+      \list{organization}{1}{%
+        {The PostgreSQL Global Development Group}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{PostgreSQL: JSON Types : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.postgresql.org/docs/current/datatype-json.html
+      \endverb
+      \verb{url}
+      \verb https://www.postgresql.org/docs/current/datatype-json.html
+      \endverb
+    \endentry
+    \entry{postgres-uuid-type-current}{online}{}
+      \list{organization}{1}{%
+        {The PostgreSQL Global Development Group}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{PostgreSQL: UUID Type : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.postgresql.org/docs/current/datatype-uuid.html
+      \endverb
+      \verb{url}
+      \verb https://www.postgresql.org/docs/current/datatype-uuid.html
+      \endverb
+    \endentry
+    \entry{python-docs}{online}{}
+      \list{organization}{1}{%
+        {Python Software Foundation}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{Python 3 Documentation : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.python.org/3/
+      \endverb
+      \verb{url}
+      \verb https://docs.python.org/3/
+      \endverb
+    \endentry
+    \entry{sentence-transformers-docs}{online}{}
+      \list{organization}{1}{%
+        {UKP Lab}%
+      }
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Текст : электронный}
+      \field{title}{Sentence Transformers Documentation : сайт}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.sbert.net/
+      \endverb
+      \verb{url}
+      \verb https://www.sbert.net/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
 
-\bibitem{postgres-docs-17}
-\selectlanguageifdefined{english}
-{{The PostgreSQL Global Development Group}}. PostgreSQL 17 Documentation. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://www.postgresql.org/docs/17/} (дата
-  обращения: 10.05.2026).
-
-\bibitem{postgres-docs-18}
-\selectlanguageifdefined{english}
-{{The PostgreSQL Global Development Group}}. PostgreSQL 18 Documentation. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://www.postgresql.org/docs/18/} (дата
-  обращения: 10.05.2026).
-
-\bibitem{postgres-versioning}
-\selectlanguageifdefined{english}
-{{The PostgreSQL Global Development Group}}. PostgreSQL Versioning Policy. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://www.postgresql.org/support/versioning/} (дата
-  обращения: 10.05.2026).
-
-\bibitem{postgres-release-root}
-\selectlanguageifdefined{english}
-{{The PostgreSQL Global Development Group}}. PostgreSQL Release Notes Archive.
-  --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://www.postgresql.org/docs/release/} (дата
-  обращения: 10.05.2026).
-
-\bibitem{lewis2020rag}
-\selectlanguageifdefined{english}
-Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks~/
-  Patrick~Lewis, Ethan~Perez, Aleksandra~Piktus et~al.~// Advances in Neural
-  Information Processing Systems. --
-\newblock Vol.~33. --
-\newblock 2020. --
-\newblock Pp.~9459--9474.
-
-\bibitem{dpr2020}
-\selectlanguageifdefined{english}
-Dense Passage Retrieval for Open-Domain Question Answering~/
-  Vladimir~Karpukhin, Barlas~Oguz, Sewon~Min et~al.~// Proceedings of the 2020
-  Conference on Empirical Methods in Natural Language Processing. --
-\newblock 2020. --
-\newblock Pp.~6769--6781.
-
-\bibitem{sbert2019}
-\selectlanguageifdefined{english}
-{Reimers,~Nils}. Sentence-BERT: Sentence Embeddings using Siamese
-  BERT-Networks~/ Nils~Reimers, Iryna~Gurevych~// Proceedings of the 2019
-  Conference on Empirical Methods in Natural Language Processing. --
-\newblock 2019. --
-\newblock Pp.~3982--3992.
-
-\bibitem{colbert2020}
-\selectlanguageifdefined{english}
-{Khattab,~Omar}. ColBERT: Efficient and Effective Passage Search via
-  Contextualized Late Interaction over BERT~/ Omar~Khattab, Matei~Zaharia~//
-  Proceedings of the 43rd International ACM SIGIR Conference on Research and
-  Development in Information Retrieval. --
-\newblock 2020. --
-\newblock Pp.~39--48.
-
-\bibitem{bert2018}
-\selectlanguageifdefined{english}
-BERT: Pre-training of Deep Bidirectional Transformers for Language
-  Understanding~/ Jacob~Devlin, Ming-Wei~Chang, Kenton~Lee,
-  Kristina~Toutanova~// Proceedings of NAACL-HLT 2019. --
-\newblock 2019. --
-\newblock Pp.~4171--4186.
-
-\bibitem{sommerville2016}
-\selectlanguageifdefined{english}
-{Sommerville,~Ian}. Software Engineering~/ Ian~Sommerville. --
-\newblock 10 edition. --
-\newblock Boston: Pearson, 2016.
-
-\bibitem{pressman2020}
-\selectlanguageifdefined{english}
-{Pressman,~Roger~S.} Software Engineering: A Practitioner's Approach~/
-  Roger~S.~Pressman, Bruce~R.~Maxim. --
-\newblock 9 edition. --
-\newblock New York: McGraw-Hill Education, 2020.
-
-\bibitem{gost-r-iso-25010-2015}
-\selectlanguageifdefined{english}
-{{Федеральное агентство по техническому
-  регулированию и метрологии}}. ГОСТ Р
-  ИСО/МЭК 25010-2015. Требования и оценка
-  качества систем и программного
-  обеспечения. Модели качества. --
-\newblock М.: Стандартинформ. --
-\newblock 2016.
-
-\bibitem{manning2008}
-\selectlanguageifdefined{english}
-{Manning,~Christopher~D.} Introduction to Information Retrieval~/
-  Christopher~D.~Manning, Prabhakar~Raghavan, Hinrich~Sch{\"u}tze. --
-\newblock Cambridge: Cambridge University Press, 2008.
-
-\bibitem{bm25-prf}
-\selectlanguageifdefined{english}
-{Robertson,~Stephen}. The Probabilistic Relevance Framework: BM25 and Beyond~/
-  Stephen~Robertson, Hugo~Zaragoza~// {Foundations and Trends in Information
-  Retrieval}. --
-\newblock 2009. --
-\newblock Vol.~3, no.~4. --
-\newblock Pp.~333--389.
-
-\bibitem{hnsw2016}
-\selectlanguageifdefined{english}
-{Malkov,~Yu.~A.} Efficient and robust approximate nearest neighbor search using
-  Hierarchical Navigable Small World graphs~/ Yu.~A.~Malkov, D.~A.~Yashunin~//
-  {IEEE Transactions on Pattern Analysis and Machine Intelligence}. --
-\newblock 2020. --
-\newblock Vol.~42, no.~4. --
-\newblock Pp.~824--836.
-
-\bibitem{faiss2017}
-\selectlanguageifdefined{english}
-{Johnson,~Jeff}. Billion-scale similarity search with GPUs~/ Jeff~Johnson,
-  Matthijs~Douze, Herv{\'e}~J{\'e}gou~// {IEEE Transactions on Big Data}. --
-\newblock 2021. --
-\newblock Vol.~7, no.~3. --
-\newblock Pp.~535--547.
-
-\bibitem{codd1970}
-\selectlanguageifdefined{english}
-{Codd,~E.~F.} A Relational Model of Data for Large Shared Data Banks~/
-  E.~F.~Codd~// {Communications of the ACM}. --
-\newblock 1970. --
-\newblock Vol.~13, no.~6. --
-\newblock Pp.~377--387.
-
-\bibitem{ullman1988}
-\selectlanguageifdefined{english}
-{Ullman,~Jeffrey~D.} Principles of Database and Knowledge-Base Systems~/
-  Jeffrey~D.~Ullman. --
-\newblock Rockville: Computer Science Press, 1988.
-
-\bibitem{date2004}
-\selectlanguageifdefined{english}
-{Date,~C.~J.} An Introduction to Database Systems~/ C.~J.~Date. --
-\newblock 8 edition. --
-\newblock Boston: Pearson, 2004.
-
-\bibitem{garcia2008}
-\selectlanguageifdefined{english}
-{Garcia-Molina,~Hector}. Database Systems: The Complete Book~/
-  Hector~Garcia-Molina, Jeffrey~D.~Ullman, Jennifer~Widom. --
-\newblock 2 edition. --
-\newblock Upper Saddle River: Pearson, 2008.
-
-\bibitem{silberschatz2020}
-\selectlanguageifdefined{english}
-{Silberschatz,~Abraham}. Database System Concepts~/ Abraham~Silberschatz,
-  Henry~F.~Korth, S.~Sudarshan. --
-\newblock 7 edition. --
-\newblock New York: McGraw-Hill Education, 2020.
-
-\bibitem{elmasri2016}
-\selectlanguageifdefined{english}
-{Elmasri,~Ramez}. Fundamentals of Database Systems~/ Ramez~Elmasri,
-  Shamkant~B.~Navathe. --
-\newblock 7 edition. --
-\newblock Boston: Pearson, 2016.
-
-\bibitem{martin2017}
-\selectlanguageifdefined{english}
-{Martin,~Robert~C.} Clean Architecture: A Craftsman's Guide to Software
-  Structure and Design~/ Robert~C.~Martin. --
-\newblock Boston: Prentice Hall, 2017.
-
-\bibitem{fowler2002}
-\selectlanguageifdefined{english}
-{Fowler,~Martin}. Patterns of Enterprise Application Architecture~/
-  Martin~Fowler. --
-\newblock Boston: Addison-Wesley, 2002.
-
-\bibitem{fowler2018}
-\selectlanguageifdefined{english}
-{Fowler,~Martin}. Refactoring: Improving the Design of Existing Code~/
-  Martin~Fowler. --
-\newblock 2 edition. --
-\newblock Boston: Addison-Wesley, 2018.
-
-\bibitem{bass2021}
-\selectlanguageifdefined{english}
-{Bass,~Len}. Software Architecture in Practice~/ Len~Bass, Paul~Clements,
-  Rick~Kazman. --
-\newblock 4 edition. --
-\newblock Boston: Addison-Wesley, 2021.
-
-\bibitem{larman2004}
-\selectlanguageifdefined{english}
-{Larman,~Craig}. Applying UML and Patterns~/ Craig~Larman. --
-\newblock 3 edition. --
-\newblock Upper Saddle River: Prentice Hall, 2004.
-
-\bibitem{newman2021}
-\selectlanguageifdefined{english}
-{Newman,~Sam}. Building Microservices~/ Sam~Newman. --
-\newblock 2 edition. --
-\newblock Sebastopol: O'Reilly Media, 2021.
-
-\bibitem{richards2020}
-\selectlanguageifdefined{english}
-{Richards,~Mark}. Fundamentals of Software Architecture~/ Mark~Richards,
-  Neal~Ford. --
-\newblock Sebastopol: O'Reilly Media, 2020.
-
-\bibitem{beizer1990}
-\selectlanguageifdefined{english}
-{Beizer,~Boris}. Software Testing Techniques~/ Boris~Beizer. --
-\newblock 2 edition. --
-\newblock New York: Van Nostrand Reinhold, 1990.
-
-\bibitem{myers2011}
-\selectlanguageifdefined{english}
-{Myers,~Glenford~J.} The Art of Software Testing~/ Glenford~J.~Myers,
-  Corey~Sandler, Tom~Badgett. --
-\newblock 3 edition. --
-\newblock Hoboken: John Wiley and Sons, 2011.
-
-\bibitem{kaner1999}
-\selectlanguageifdefined{english}
-{Kaner,~Cem}. Testing Computer Software~/ Cem~Kaner, Jack~Falk, Hung~Q.~Nguyen.
-  --
-\newblock 2 edition. --
-\newblock New York: John Wiley and Sons, 1999.
-
-\bibitem{docker-docs}
-\selectlanguageifdefined{english}
-{{Docker, Inc.}} Docker Documentation. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://docs.docker.com/} (дата обращения:
-  10.05.2026).
-
-\bibitem{postgres-logical-replication-16}
-\selectlanguageifdefined{english}
-{{The PostgreSQL Global Development Group}}. PostgreSQL 16: Logical
-  Replication. --
-\newblock [Электронный ресурс]. --
-\newblock URL:
-  \url{https://www.postgresql.org/docs/16/logical-replication.html} (дата
-  обращения: 10.05.2026).
-
-\bibitem{postgres-runtime-config-repl-16}
-\selectlanguageifdefined{english}
-{{The PostgreSQL Global Development Group}}. PostgreSQL 16: Runtime
-  Configuration -- Replication. --
-\newblock [Электронный ресурс]. --
-\newblock URL:
-  \url{https://www.postgresql.org/docs/16/runtime-config-replication.html}
-  (дата обращения: 10.05.2026).
-
-\bibitem{fastapi-docs}
-\selectlanguageifdefined{english}
-{Ram{\'i}rez,~Sebasti{\'a}n}. FastAPI Documentation. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://fastapi.tiangolo.com/} (дата
-  обращения: 10.05.2026).
-
-\bibitem{pydantic-docs}
-\selectlanguageifdefined{english}
-{{Pydantic Team}}. Pydantic Documentation. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://pydantic.dev/docs/} (дата обращения:
-  10.05.2026).
-
-\bibitem{sqlalchemy-docs}
-\selectlanguageifdefined{english}
-{{SQLAlchemy Authors}}. SQLAlchemy Documentation. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://docs.sqlalchemy.org/20/} (дата
-  обращения: 10.05.2026).
-
-\bibitem{alembic-docs}
-\selectlanguageifdefined{english}
-{{Alembic Authors}}. Alembic Documentation. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://alembic.sqlalchemy.org/} (дата
-  обращения: 10.05.2026).
-
-\bibitem{pgvector}
-\selectlanguageifdefined{english}
-{Kane,~Andrew}. pgvector: Open-source vector similarity search for PostgreSQL.
-  --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://github.com/pgvector/pgvector} (дата
-  обращения: 10.05.2026).
-
-\bibitem{beautifulsoup-docs}
-\selectlanguageifdefined{english}
-{Richardson,~Leonard}. Beautiful Soup Documentation. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://www.crummy.com/software/BeautifulSoup/bs4/doc/}
-  (дата обращения: 10.05.2026).
-
-\bibitem{httpx-docs}
-\selectlanguageifdefined{english}
-{{Encode OSS Ltd.}} HTTPX Documentation. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://www.python-httpx.org/} (дата
-  обращения: 10.05.2026).
-
-\bibitem{groq-docs}
-\selectlanguageifdefined{english}
-{{Groq, Inc.}} Groq API Documentation. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://console.groq.com/docs/overview} (дата
-  обращения: 10.05.2026).
-
-\bibitem{pytest-docs}
-\selectlanguageifdefined{english}
-{{pytest development team}}. pytest Documentation. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://docs.pytest.org/} (дата обращения:
-  10.05.2026).
-
-\bibitem{postgres-textsearch-16}
-\selectlanguageifdefined{english}
-{{The PostgreSQL Global Development Group}}. PostgreSQL 16: Full Text Search.
-  --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://www.postgresql.org/docs/16/textsearch.html}
-  (дата обращения: 10.05.2026).
-
-\bibitem{gost-7-32-2017}
-\selectlanguageifdefined{english}
-{{Межгосударственный совет по
-  стандартизации, метрологии и
-  сертификации}}. ГОСТ 7.32-2017. СИБИД. Отчет о
-  научно-исследовательской работе.
-  Структура и правила оформления. --
-\newblock М.: Стандартинформ. --
-\newblock 2018.
-
-\bibitem{gost-r-7-0-100-2018}
-\selectlanguageifdefined{english}
-{{Федеральное агентство по техническому
-  регулированию и метрологии}}. ГОСТ Р
-  7.0.100-2018. СИБИД. Библиографическая запись.
-  Библиографическое описание. Общие
-  требования и правила составления. --
-\newblock М.: Стандартинформ. --
-\newblock 2018.
-
-\bibitem{gost-r-7-0-5-2008}
-\selectlanguageifdefined{english}
-{{Федеральное агентство по техническому
-  регулированию и метрологии}}. ГОСТ Р 7.0.5-2008.
-  СИБИД. Библиографическая ссылка. Общие
-  требования и правила составления. --
-\newblock М.: Стандартинформ. --
-\newblock 2008.
-
-\bibitem{gost-19-201-78}
-\selectlanguageifdefined{english}
-{{Госстандарт СССР}}. ГОСТ 19.201-78. ЕСПД.
-  Техническое задание. Требования к
-  содержанию и оформлению. --
-\newblock М.: Издательство стандартов. --
-\newblock 1978.
-
-\bibitem{gost-34-601-90}
-\selectlanguageifdefined{english}
-{{Госстандарт СССР}}. ГОСТ 34.601-90.
-  Информационная технология.
-  Автоматизированные системы. Стадии
-  создания. --
-\newblock М.: Издательство стандартов. --
-\newblock 1990.
-
-\bibitem{gost-34-602-89}
-\selectlanguageifdefined{english}
-{{Госстандарт СССР}}. ГОСТ 34.602-89.
-  Информационная технология. Техническое
-  задание на создание автоматизированной
-  системы. --
-\newblock М.: Издательство стандартов. --
-\newblock 1989.
-
-\bibitem{kleppmann2017}
-\selectlanguageifdefined{english}
-{Kleppmann,~Martin}. Designing Data-Intensive Applications~/ Martin~Kleppmann.
-  --
-\newblock Sebastopol: O'Reilly Media, 2017.
-
-\bibitem{postgres-json-types-current}
-\selectlanguageifdefined{english}
-{{The PostgreSQL Global Development Group}}. PostgreSQL: JSON Types. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://www.postgresql.org/docs/current/datatype-json.html}
-  (дата обращения: 10.05.2026).
-
-\bibitem{postgres-uuid-type-current}
-\selectlanguageifdefined{english}
-{{The PostgreSQL Global Development Group}}. PostgreSQL: UUID Type. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://www.postgresql.org/docs/current/datatype-uuid.html}
-  (дата обращения: 10.05.2026).
-
-\bibitem{python-docs}
-\selectlanguageifdefined{english}
-{{Python Software Foundation}}. Python 3 Documentation. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://docs.python.org/3/} (дата обращения:
-  10.05.2026).
-
-\bibitem{sentence-transformers-docs}
-\selectlanguageifdefined{english}
-{{UKP Lab}}. Sentence Transformers Documentation. --
-\newblock [Электронный ресурс]. --
-\newblock URL: \url{https://www.sbert.net/} (дата обращения:
-  10.05.2026).
-
-\end{thebibliography}
