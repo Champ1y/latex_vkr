@@ -1507,16 +1507,16 @@
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labeltitlesource}{title}
       \field{addendum}{Текст : электронный}
-      \field{title}{PostgreSQL: JSON Types : сайт}
+      \field{title}{PostgreSQL 16: JSON Types : сайт}
       \field{urlday}{10}
       \field{urlmonth}{5}
       \field{urlyear}{2026}
       \field{urldateera}{ce}
       \verb{urlraw}
-      \verb https://www.postgresql.org/docs/current/datatype-json.html
+      \verb https://www.postgresql.org/docs/16/datatype-json.html
       \endverb
       \verb{url}
-      \verb https://www.postgresql.org/docs/current/datatype-json.html
+      \verb https://www.postgresql.org/docs/16/datatype-json.html
       \endverb
     \endentry
     \entry{postgres-uuid-type-current}{online}{}
@@ -1527,16 +1527,16 @@
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labeltitlesource}{title}
       \field{addendum}{Текст : электронный}
-      \field{title}{PostgreSQL: UUID Type : сайт}
+      \field{title}{PostgreSQL 16: UUID Type : сайт}
       \field{urlday}{10}
       \field{urlmonth}{5}
       \field{urlyear}{2026}
       \field{urldateera}{ce}
       \verb{urlraw}
-      \verb https://www.postgresql.org/docs/current/datatype-uuid.html
+      \verb https://www.postgresql.org/docs/16/datatype-uuid.html
       \endverb
       \verb{url}
-      \verb https://www.postgresql.org/docs/current/datatype-uuid.html
+      \verb https://www.postgresql.org/docs/16/datatype-uuid.html
       \endverb
     \endentry
     \entry{python-docs}{online}{}

@@ -36,6 +36,7 @@ citecolor=black, menucolor=black, filecolor=black,
 \addbibresource{rpz.bib}
 \renewcommand*{\multicitedelim}{\addcomma\space}
 \renewcommand*{\compcitedelim}{\textendash}
+\renewcommand*{\multiciterangedelim}{\textendash}
 
 \usepackage{pdfpages}
 
@@ -208,6 +209,10 @@ rightmargin=0pt % Reduces right outer margin
     breakanywhere=true,
     breakautoindent=true,
     breaklines=true,
+    breaksymbolleft={},
+    breaksymbolright={},
+    breaksymbolsepleft=0pt,
+    breaksymbolsepright=0pt,
 }
 
 \newenvironment{listingblock}[1][35mm]{%
@@ -266,8 +271,13 @@ rightmargin=0pt % Reduces right outer margin
   \let\textit\@firstofone
   \let\textsl\@firstofone
   \let\emph\@firstofone
+  \def\PYGZdq{\char34\relax}%
 }
 \makeatother
+\AtBeginEnvironment{Verbatim}{%
+  \def\PYGZdq{\char34\relax}%
+  \def\PYGZsq{\char39\relax}%
+}
 \AfterEndEnvironment{minted}{\par\addvspace{7pt}}
 \AtBeginEnvironment{longtable}{\small\setstretch{1}\selectfont}
 \AtEndEnvironment{listing}{\vspace{0pt}}
@@ -290,6 +300,7 @@ rightmargin=0pt % Reduces right outer margin
 }
 \IfFontExistsTF{Courier New}{
   \newfontfamily\listingfont{Courier New}[
+    Mapping=,
     Scale=MatchLowercase,
     BoldFont={Courier New},
     ItalicFont={Courier New},
@@ -297,6 +308,7 @@ rightmargin=0pt % Reduces right outer margin
   ]
 }{
   \newfontfamily\listingfont{DejaVu Sans Mono}[
+    Mapping=,
     Scale=MatchLowercase,
     BoldFont={DejaVu Sans Mono},
     ItalicFont={DejaVu Sans Mono},
@@ -325,6 +337,19 @@ rightmargin=0pt % Reduces right outer margin
     }%
   }%
 }
+\newcommand*\VKR@physicalcenterpagenumber[1]{%
+  \hbox to \textwidth{%
+    \hspace*{\dimexpr .5\paperwidth - 1in - \hoffset - #1\relax}%
+    \makebox[0pt][c]{\normalfont\fontsize{14pt}{14pt}\selectfont\thepage}%
+    \hss}%
+}
+\def\ps@plain{%
+  \let\@oddhead\@empty
+  \let\@evenhead\@empty
+  \def\@oddfoot{\VKR@physicalcenterpagenumber{\oddsidemargin}}%
+  \def\@evenfoot{\VKR@physicalcenterpagenumber{\evensidemargin}}%
+}
+\pagestyle{plain}
 \let\VKR@landscape\landscape
 \let\endVKR@landscape\endlandscape
 \renewenvironment{landscape}{%
